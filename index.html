@@ -1,4 +1,57 @@
-<h1>good night day</h1>
-<script>
-    alert(localStorage.getItem("hello"));   
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  /* position: absolute;
+  z-index: 1; */
+  background-image: url("img/fashion-918446_1920.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.opacity {
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: absolute;
+    background-color: black;
+    opacity: .2;
+}
+
+h1{
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    /* vendor prefixes omitted due to brevity */
+}
+</style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="opacity"></div>
+    <h1>HELLO THIS IS SOME TEXT</h1>
+
+
+    
+</body>
+</html>
