@@ -1,0 +1,90 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(../font/BebasNeue-webfont.woff);
+  }
+
+  .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    background-image: url("../img/UO6pL1X.jpg");
+    height: 88%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bebas {
+    font-family: BebasNeue;
+  }
+  
+  .opacity {
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 88%;
+      top: 80px;
+      position: absolute;
+      background-color: black;
+      opacity: .2;
+  }
+
+  .absolute{
+    z-index: 2;
+    position: absolute;
+    top: 15vh;
+  }
+  
+  .center {
+      text-align: center;
+      width: 100vw;
+  }
+
+  .somethingToSay{
+    position: absolute; 
+    right: 0px;
+  }
+
+  .isDesktop {
+    display: initial;
+  }
+
+  .isMobile { 
+    display: none;
+  }
+
+  .blue{
+    color:#85f9ff;
+  }
+  .pink{
+    color:#e64def;;
+  }
+  .green{
+    color:#95ff88;
+  }
+
+  
+  .reg-text{  
+      color: white;
+      font-size: 3.5vw;
+      margin: 20px;
+  }
+
+  .raiseMe{
+    vertical-align: middle;
+  }
+
+  .bigger{
+    font-size: 5vw;
+  }
