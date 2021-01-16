@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors.css">
 <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css"/>
 </head>
 <body>
@@ -34,40 +35,51 @@
             <div class="somethingToSay isDesktop">
                 <a href="https://dropkindnessnotbombs.com" class="navbar-brand d-flex align-items-center">
                 <h2 class="my-2 text-white ml-3 navbarHeader bebas">I got something to say</h2>
+                <img src="img/megaphone.png" class="megaphoneImg">
                 </a>
             </div>
             </div>
         </div>
     </header>
     <div class="bg"></div>
+    <img src="img/grenade-flower.png" class="flowerGrenade">
     <div class="opacity"></div>
     <div class="absolute center bebas text-white">
-        <p class="reg-text">
+        <div class="desktop leftSwipe"></div>
+        <div class="desktop rightSwipe"></div>
+        <p class="reg-text line1">
             <span class="bigger green">What....</span> 
             <span class="blue">What is this thing?</span>
         </p>
-        <p class="reg-text">
+        <p class="reg-text line2">
             It’s sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
         </p>
-        <p class="reg-text">
-            <span class="bigger pink">
-                SWIPE LEFT
+        <p class="reg-text website"></p>
+        <p class="reg-text swipes">
+            <span class="bigger">
+                <span class="swipeColor1">
+                    <span class="interactiveTxt"></span> LEFT
+                </span>
             </span> 
-            <span class="raiseMe">
+            <span class="leftSwipeTxt">
                 to get started
             </span>
         </p>
         <p class="reg-text">
-            <span class="bigger blue">
-                SWIPE RIGHT
+            <span class="bigger">
+                <span class="swipeColor2">
+                    <span class="interactiveTxt"></span> RIGHT
+                </span>
             </span> 
-            <span class="raiseMe">
+            <span class="rightSwipeTxt">
             if you wanna learn more
             </span>
         </p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/google-sheets.js"></script>
-    <script src="js/include.js"></script>
+    <!-- <script src="js/google-sheets.js"></script> -->
+    <script src="js/mobile.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/randomColor.js"></script>
 </body>
 </html>

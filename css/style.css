@@ -14,15 +14,46 @@
     height: 100%;
     margin: 0;
   }
+
+  .leftSwipe{
+    position: absolute;
+    display: block;
+    width: 50vw;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    height: 84vh;
+  }
+
+  .rightSwipe{
+    position: absolute;
+    display: block;
+    width: 50vw;
+    height: 84vh;
+    top: 0px;
+    margin-left: 50vw;
+    z-index: 6;
+  }
+
+  .smallTxt {
+    font-size: 2vw;
+  }
   
   .bg {
     background-image: url("../img/UO6pL1X.jpg");
+    /* NOTBAD: background-color: #1b029a; */
     height: 88%; 
+
   
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .flowerGrenade {
+    position: absolute;
+    bottom: 5vh;
+    width: 20vw;
   }
 
   .bebas {
@@ -63,26 +94,17 @@
   .isMobile { 
     display: none;
   }
-
-  .blue{
-    color:#85f9ff;
-  }
-  .pink{
-    color:#e64def;;
-  }
-  .green{
-    color:#95ff88;
-  }
-
   
+  .megaphone{
+    width: 40px;
+    margin-top: -10px;
+    margin-left: 8px;
+  }
+
   .reg-text{  
       color: white;
       font-size: 3.5vw;
       margin: 20px;
-  }
-
-  .raiseMe{
-    vertical-align: middle;
   }
 
   .bigger{
