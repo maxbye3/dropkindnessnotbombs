@@ -4,18 +4,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/colors.css">
-<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/bootstrap.css"/>
+<link rel="stylesheet" href="css/responsive.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    <!-- <div w3-include-html="header.html"></div> -->
+<body>    
     <header>  
         <div class="navbar bg-dark navbar-dark box-shadow">
             <div class="d-flex justify-content-between w-100">
             <div class="row">
                 <!-- mobile -->
-                <div hidden class="col-1 pt-2 pl-1">
+                <div class="isMobile col-1 pt-2 pl-1">
                     <button
-                        class="navbar-toggler isMobile"
+                        class="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
                         data-target="#navbarHeader"
@@ -34,52 +37,106 @@
             <!-- desktop -->
             <div class="somethingToSay isDesktop">
                 <a href="https://dropkindnessnotbombs.com" class="navbar-brand d-flex align-items-center">
-                <h2 class="my-2 text-white ml-3 navbarHeader bebas">I got something to say</h2>
-                <img src="img/megaphone.png" class="megaphoneImg">
+                    <h2 class="my-2 text-white ml-3 navbarHeader bebas">I got something to say</h2>
+                    <img src="img/megaphone.png" class="megaphoneImg">
                 </a>
-            </div>
             </div>
         </div>
     </header>
+    <!-- MOBILE HEADER -->
+    <div class="isMobile navbar bg-dark navbar-dark navbar-dark-light">
+        <h2 class="my-2 text-white ml-3 navbarHeader"></h2>
+            <img src="img/megaphone.png" class="megaphoneImg">
+            <span class="bebas bigger"> I got something to say </span>
+        </h2>        
+    </div>
+    <!-- mobile header -->
+    <!-- LEVEL TYPE -->
+    <div class="levelBg">
+        <span class="levelStaticTxt">
+            Level: 
+            <span class="levelTxt">Simple</span>
+        </span>
+        <div class="levelCircle">200</div>
+    </div>
+    <!-- level type -->
+
     <div class="bg"></div>
     <img src="img/grenade-flower.png" class="flowerGrenade">
-    <div class="opacity"></div>
-    <div class="absolute center bebas text-white">
+    <div class="absolute reg-text failureContainer center">
+        <h3>Oh oh! Unable to get info!</h3>
+        <h3><button onclick="tryAgain()" class="btn btn-info tryAgainBtn">Click here to try again</button></h3>        
+    </div>
+    <div class="swipeContainer">
         <div class="desktop leftSwipe"></div>
         <div class="desktop rightSwipe"></div>
-        <p class="reg-text line1">
-            <span class="bigger green">What....</span> 
-            <span class="blue">What is this thing?</span>
-        </p>
-        <p class="reg-text line2">
-            It’s sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
-        </p>
-        <p class="reg-text website"></p>
-        <p class="reg-text swipes">
-            <span class="bigger">
-                <span class="swipeColor1">
-                    <span class="interactiveTxt"></span> LEFT
+        <div class="absolute center bebas text-white">
+            <p class="reg-text line1">
+                <span class="bigger green">What....</span> 
+                <span class="blue">What is this thing?</span>
+            </p>
+            <p class="reg-text line2">
+                It’s sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
+            </p>
+            <p class="reg-text website"></p>
+            <p class="reg-text swipes">
+                <span class="bigger tapLeft">
+                    <span id="swipeColor1">
+                        <span class="interactiveTxt"></span> LEFT
+                    </span>
+                </span> 
+                <span class="leftSwipeTxt">
+                    to get started
                 </span>
-            </span> 
-            <span class="leftSwipeTxt">
-                to get started
-            </span>
-        </p>
-        <p class="reg-text">
-            <span class="bigger">
-                <span class="swipeColor2">
-                    <span class="interactiveTxt"></span> RIGHT
+            </p>
+            <p class="reg-text">
+                <span class="bigger">
+                    <span id="swipeColor2">
+                        <span class="interactiveTxt"></span> RIGHT
+                    </span>
+                </span> 
+                <span class="rightSwipeTxt">
+                if you wanna learn more
                 </span>
-            </span> 
-            <span class="rightSwipeTxt">
-            if you wanna learn more
-            </span>
-        </p>
+            </p>
+        </div>
     </div>
+
+    
+    <!-- IMAGE KUDOS -->
+    <div class="imageKudos"></div>
+
+    <!-- DISCLAIMER -->
+    <div class="cookiedisclaimer">        
+        <p class="isDesktop text-white">
+            <img src="img/grenade-flower.png" class="cookieImg">
+            THIS WEBSITE USES COOKIES
+            <span class="disclaimerLink">and I'm cool with that</span>
+        </p>
+        <p class="isMobile">
+            <img src="img/grenade-flower.png" class="cookieImg">
+            <span class="disclaimerLink">I'm cool with cookies</span>
+        </p> 
+        </div>
+        <div class="cookieDisclaimerBg"></div>
+    </div>    
+    <!-- disclaimer -->
+    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!-- <script src="js/google-sheets.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/google-sheets.js"></script>
     <script src="js/mobile.js"></script>
-    <script src="js/scroll.js"></script>
+    <script src="js/swipes.js"></script>
+    <script src="js/intKindness.js"></script>
     <script src="js/randomColor.js"></script>
+    <script>
+        $( document ).ready(function() {
+            randomColor('#swipeColor1');
+            randomColor('#swipeColor2');
+            $('.failureContainer, .imageKudos').hide();
+            getData();
+        });
+    </script>
 </body>
 </html>
