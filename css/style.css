@@ -179,7 +179,11 @@ a {
 
 .somethingToSay{
   position: absolute; 
+}
+
+.somethingToSayMobile{
   right: 0px;
+  border-top: solid 1px #999;
 }
 
 .isDesktop {

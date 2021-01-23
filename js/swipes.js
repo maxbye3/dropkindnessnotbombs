@@ -32,7 +32,7 @@ $(".kindnessComplete").click(function() {
 
 $(".emailSaved").click(function() {
   var userEmail = $("#userEmail").val();
-  saveToDb({id: 2, status: 'in progress', email: userEmail});
+  newSaveToDb({id: 2, status: 'in progress', email: userEmail});
   $(".emailEnterContainer").hide();
   $("#otherwise").html("great!");
   $(".emailEnter").hide();
@@ -54,7 +54,8 @@ function kindnessSelected(){
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
   $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
   $(".leftSwipeTxt").html("if you want to select a new suggestion");
-  $(".absolute").css("top","25vh");
+  $(".absolute").css({"top":"25vh"});
+  $(".bg").css({"opacity": ".3"});
   $(".selectAgain").show().html("<u class='selectAgainGrayTxt'>or click here to select a new kindness</u>");
   $(".statusHeading").html("<span class='strongRed'>KINDNESS SELECTED:</span>");
   $(".emailHeader").html("Want a reminder?");

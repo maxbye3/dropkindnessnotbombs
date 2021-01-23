@@ -15,24 +15,54 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-function saveToDb(saveObj){
-    firebase.database().ref('kindness/').push(saveObj, function(error) {
+function newSaveToDb(propertiesToSave){
+    firebase.database().ref('kindness/').push(propertiesToSave, function(error) {
     if (error) {     
-        console.log('Error: ', error)
+        console.log('New save error: ', error)
     } else {
-        console.log("Success!");
+        console.log("New save success!");
     }
     });
 }
-console.log(firebase.auth());
 
-firebase.database().ref('/kindness').once('value').then((snapshot) => {
-    var lunch = snapshot.val();
-    Object.keys(lunch).forEach(function (item) {
-        console.log(item); // key
-        console.log(lunch[item]); // value
+function updateIdInDb(userId, propertiesToSave){
+    firebase.database().ref('kindness/' + userId).set(propertiesToSave, function(error) {
+    if (error) {     
+        console.log('Update error: ', error)
+    } else {
+        console.log("Update success!");
+    }
     });
+}
 
-    // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-    // ...
-  });
+function updateStatus(id){
+    firebase.database().ref('/kindness').once('value').then((snapshot) => {
+        var data = snapshot.val();
+        Object.keys(data).forEach(function (item) {
+            // console.log(item); // key
+            // console.log(data[item]); // value
+
+            // we're going to update id 2 status
+            if(data[item].id == id){
+                data[item].status = 'complete';
+                updateIdInDb(item, data[item])
+            }
+        });
+    });
+}
+
+function updateSelectedKindness(id, line1){
+    firebase.database().ref('/kindness').once('value').then((snapshot) => {
+        var data = snapshot.val();
+        Object.keys(data).forEach(function (item) {
+            // console.log(item); // key
+            // console.log(data[item]); // value
+
+            // we're going to update id 2 status
+            if(data[item].id == id){
+                data[item].kindness = line1;
+                updateIdInDb(item, data[item])
+            }
+        });
+    });
+}

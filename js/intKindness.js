@@ -9,7 +9,8 @@ function goKindness(){
   // from selected back to selection
   $(".kindnessSelected, .selectAgain, .kindnessComplete").hide();
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .levelBg").show();
-  $(".absolute").css("top","35vh");
+  $(".absolute").css({"top":"35vh"});
+  $(".bg").css({"opacity": ".5"});
 
   var uniqueInt = uniqueRandomNum();
   // console.log("uniqueInt:", uniqueInt);
@@ -30,7 +31,6 @@ function goKindness(){
     }
     $(".websiteUrl").hide().html("<a href=" + website[uniqueInt] +" target='_blank'>" + website[uniqueInt] + "</a>");
     $(".bg").css('background-image', 'url("./img/'+ image[uniqueInt] + '")');
-    // $(".absolute").css("top","35vh");
     $(".leftSwipeTxt").html("for another suggestion");
     $(".rightSwipeTxt").html("to take on the challenge");
   }
