@@ -12,7 +12,7 @@
 </head>
 <body>    
     <header>  
-        <div class="navbar bg-dark navbar-dark box-shadow">
+        <div class="navbar bg-light navbar-dark box-shadow">
             <div class="d-flex justify-content-between w-100">
             <div class="row">
                 <!-- mobile -->
@@ -30,22 +30,22 @@
                     </button>
                 </div>
             <div class="col-6 ml-2">
-                <a href="https://dropkindnessnotbombs.com" class="navbar-brand d-flex align-items-center">
-                <h2 class="my-2 text-white ml-3 navbarHeader bebas">Drop Kindness Not Bombs</h2>
+                <a class="navbar-brand d-flex align-items-center cursor-pointer">
+                    <h2 class="my-2 text-dark ml-3 navbarHeader bebas kindnessTitle cursor-pointer" onclick="goAbout()">Drop Kindness Not Bombs</h2>
                 </a>
             </div>
             <!-- desktop -->
             <div class="somethingToSay isDesktop">
                 <a href="https://dropkindnessnotbombs.com" class="navbar-brand d-flex align-items-center">
-                    <h2 class="my-2 text-white ml-3 navbarHeader bebas">I got something to say</h2>
+                    <h2 class="my-2 text-dark ml-3 navbarHeader bebas">I got something to say</h2>
                     <img src="img/megaphone.png" class="megaphoneImg">
                 </a>
             </div>
         </div>
     </header>
     <!-- MOBILE HEADER -->
-    <div class="isMobile navbar bg-dark navbar-dark navbar-dark-light">
-        <h2 class="my-2 text-white ml-3 navbarHeader"></h2>
+    <div class="isMobile navbar bg-dark navbar-dark navbar-dark-light somethingToSayMobile">
+        <h2 class="my-2 text-dark ml-3 navbarHeader"></h2>
             <img src="img/megaphone.png" class="megaphoneImg">
             <span class="bebas bigger"> I got something to say </span>
         </h2>        
@@ -62,7 +62,6 @@
     <!-- level type -->
 
     <div class="bg"></div>
-    <img src="img/grenade-flower.png" class="flowerGrenade">
     <div class="absolute reg-text failureContainer center">
         <h3>Oh oh! Unable to get info!</h3>
         <h3><button onclick="tryAgain()" class="btn btn-info tryAgainBtn">Click here to try again</button></h3>        
@@ -103,18 +102,28 @@
     </div>
 
     
+    <!-- FOLLOW ME -->
+    <div class="followMe">
+        <a href="https://twitter.com/mr_moonhead" target="_blank">
+            <img src="img/twitter.png" alt="twitter" width="50px">
+        </a>
+        <a href="https://www.instagram.com/maxbye/" target="_blank">
+            <img src="img/instagram.png" alt="instagram" width="50px">
+        </a>
+    </div>
+
     <!-- IMAGE KUDOS -->
     <div class="imageKudos"></div>
 
     <!-- DISCLAIMER -->
     <div class="cookiedisclaimer">        
         <p class="isDesktop text-white">
-            <img src="img/grenade-flower.png" class="cookieImg">
+            <img src="img/cookie_monster.png" class="cookieImg">
             THIS WEBSITE USES COOKIES
             <span class="disclaimerLink">and I'm cool with that</span>
         </p>
         <p class="isMobile">
-            <img src="img/grenade-flower.png" class="cookieImg">
+            <img src="img/cookie_monster.png" class="cookieImg">
             <span class="disclaimerLink">I'm cool with cookies</span>
         </p> 
         </div>
@@ -123,7 +132,6 @@
     <!-- disclaimer -->
     
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/google-sheets.js"></script>
     <script src="js/mobile.js"></script>
@@ -134,7 +142,7 @@
         $( document ).ready(function() {
             randomColor('#swipeColor1');
             randomColor('#swipeColor2');
-            $('.failureContainer, .imageKudos').hide();
+            $('.failureContainer, .imageKudos, .somethingToSayMobile').hide();
             getData();
         });
     </script>

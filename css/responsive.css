@@ -17,12 +17,16 @@
 
 @media all and (max-width: 700px) {
 
+  .imageKudos{
+    width: 65%;
+  }
+
   .isMobile {
     display: block;
   }
 
   .absolute {
-    top: 35vh;
+    top: 20vh;
   }
 
   .reg-text{
@@ -41,10 +45,28 @@
     margin-top: -10px;
     margin-left: 0px;
     margin-right: 8px;
+  }
+
+  .disclaimerLink {
+    color: white;
+  }
+
+  .smallTxt {
+    font-size: 3vw;
+  }
+
 }
 
-.disclaimerLink {
-  color: white;
-}
+
+@media all and (max-width: 400px) {
+
+  .absolute {
+    top: 35vh;
+  }
+
+  .kindnessTitle{
+    font-size: 8.5vw;
+  }
+
 
 }

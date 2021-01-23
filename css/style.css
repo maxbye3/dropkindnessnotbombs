@@ -21,6 +21,10 @@
   margin-left: 0px;
 }
 
+.cursor-pointer{
+  cursor: pointer !important;
+}
+
 
 body, html {
   height: 100%;
@@ -28,6 +32,7 @@ body, html {
 }
 
 .leftSwipe{
+  cursor: w-resize;
   position: absolute;
   display: block;
   width: 50vw;
@@ -38,6 +43,7 @@ body, html {
 }
 
 .rightSwipe{
+  cursor: e-resize;
   position: absolute;
   display: block;
   width: 50vw;
@@ -60,34 +66,14 @@ body{
 .bg {
   background-image: url("../img/UO6pL1X.jpg");
   /* NOTBAD: background-color: #1b029a; */
-  height: 88%; 
-  opacity: .7;
+  height: 90%; 
+  opacity: .5;
 
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.flowerGrenade {
-  opacity: .8;
-  position: absolute;
-  bottom: 5vh;
-  width: 20vw;
-}
-
-.levelCircle{
-  float: right;
-  border-radius: 200px;
-  width: 60px;
-  display: block;
-  background: red;
-  padding: 14px;
-  margin-top: -5px;
-  font-size: 23px;
-  margin-right: -30px;
-  font-family: sans-serif;
-  padding-left: 13px;
 }
 
 .tryAgainBtn{
@@ -108,10 +94,26 @@ body{
   z-index: 17;
   padding-left: 12px;
   display: block;
-  background: orange;
+  background: #67bbc4;
+  background: #ee752f;
   color: white;
   width: 150px;
   height: 50px;
+}
+
+.levelCircle{
+  float: right;
+  border-radius: 200px;
+  width: 60px;
+  display: block;
+  background: #9dcdd3;
+  background: #ee9c6d;
+  padding: 14px;
+  margin-top: -5px;
+  font-size: 23px;
+  margin-right: -45px;
+  font-family: sans-serif;
+  padding-left: 12px;
 }
 
 .cookieImg{
@@ -128,6 +130,20 @@ body{
   border-bottom: 1px #80d6e6 solid;
 }
 
+.followMe{
+  z-index: 20;
+  position: absolute;
+  left: 0px;
+  color: white;
+  padding: 5px;
+  border-radius: 0px 0px 0px 5px;
+  bottom: 2px;
+}
+
+.followMe, .followMe img, .followMe a{
+  cursor: pointer;
+}
+
 .imageKudos {
   z-index: 20;
   position: absolute;
@@ -135,7 +151,7 @@ body{
   background: rgba(0,0,0,0.5);
   color: white;
   padding: 5px;
-  border-radius: 0px 0px 0px 5px;
+  border-radius: 5px;
   bottom: 2px;
 }
 
@@ -146,7 +162,7 @@ body{
 .absolute{
   z-index: 2;
   position: absolute;
-  top: 15vh;
+  top: 35vh;
 }
 
 .center {
