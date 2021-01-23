@@ -12,14 +12,34 @@ $(".rightSwipeHitBox").click(function() {
     state = 'kindness';
     goKindness();
   } else { // kindness
-    // kindnessSelected();
-    kindnessInProgress();
+    kindnessSelected();
+    // kindnessInProgress();
   }
 });
 
+
+
+$(".kindnessComplete").click(function() {
+  kindnessSelected();
+  $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl").hide();
+  $(".statusHeading").html("<span class='blue'>Nice job!</span>");
+  $(".line1").html("Performing this kindness has scored you <span class='pink'>" + '100' + "</span> points.");
+  $(".emailHeader").html("Sign up to save your points:");
+  $(".selectAgain").show().html("<u class='text-white bigger'>Click here to select a new kindness</u>");
+  $(".privateDisclaimer").html("We ain't sharing your email with no one. <span class='red'>Even if they ask nice.</span>");
+  state = 'complete'
+});
+
 $(".emailSaved").click(function() {
-  $("#otherwise").html("great");
+  var userEmail = $("#userEmail").val();
+  saveToDb({id: 2, status: 'in progress', email: userEmail});
+  $(".emailEnterContainer").hide();
+  $("#otherwise").html("great!");
   $(".emailEnter").hide();
+  if(state == 'complete'){
+    $(".line1").html("Points have been <span class='yellow'>saved to your email</span>. You will receive confirmation <span class='pink'>in the next few days.</span>");
+  }
+  
 });
 
 $(".disclaimerLink").click(function() {
@@ -32,18 +52,19 @@ $(".navbar-toggler").click(function() {
 
 function kindnessSelected(){
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
-  $(".kindnessSelected, .websiteUrl").show();
+  $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
   $(".leftSwipeTxt").html("if you want to select a new suggestion");
   $(".absolute").css("top","25vh");
-  $(".selectAgain").show();
+  $(".selectAgain").show().html("<u class='selectAgainGrayTxt'>or click here to select a new kindness</u>");
+  $(".statusHeading").html("<span class='strongRed'>KINDNESS SELECTED:</span>");
+  $(".emailHeader").html("Want a reminder?");
+  $(".privateDisclaimer").html("As Frodon once yelled from Mount Sire. Your details <span class='pink'>\"shall not be shared!\"</span>");
 }
 
 function kindnessInProgress(){
   kindnessSelected();
   $(".kindnessSelected").hide();
   $(".kindnessComplete").show();
-
-
 }
 
 function goAbout(){

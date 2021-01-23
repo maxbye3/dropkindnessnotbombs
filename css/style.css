@@ -106,7 +106,6 @@ body{
 
 a {
   color: #9bc6f5 !important;
-  text-decoration: underline !important;
 }
 
 .levelCircle{
@@ -213,13 +212,14 @@ a {
   color: white; 
 }
 
-.enterEmailContainer {
+.emailEnterContainer {
   padding-left: 25%;
   padding-right: 25%;
 }
 
-.selectAgain{
+.selectAgainGrayTxt{
   color: #b9c2ef;
+  text-decoration: underline;
 }
 
 .kindnessSelectedTxt {
