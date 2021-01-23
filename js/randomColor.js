@@ -1,4 +1,9 @@
 var lastColor;
+randomColor('#otherwise');
+for(var i = 0; i < 10; i++){
+  randomColor('#swipeColor'+i);
+}
+
 function randomColor(classname){
   // console.log('lastColor', lastColor);
   $(classname).removeClass();

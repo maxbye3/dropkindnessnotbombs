@@ -67,9 +67,14 @@
         <h3><button onclick="tryAgain()" class="btn btn-info tryAgainBtn">Click here to try again</button></h3>        
     </div>
     <div class="swipeContainer">
-        <div class="desktop leftSwipe"></div>
-        <div class="desktop rightSwipe"></div>
+        <div class="desktop leftSwipeHitBox"></div>
+        <div class="desktop rightSwipeHitBox"></div>
         <div class="absolute center bebas text-white">
+            <div class="kindnessSelected">
+                <p class="bigger strongRed m-0">
+                        KINDNESS SELECTED:
+                </p>
+            </div>
             <p class="reg-text line1">
                 <span class="bigger green">What....</span> 
                 <span class="blue">What is this thing?</span>
@@ -77,26 +82,55 @@
             <p class="reg-text line2">
                 It’s sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
             </p>
-            <p class="reg-text website"></p>
-            <p class="reg-text swipes">
-                <span class="bigger tapLeft">
-                    <span id="swipeColor1">
-                        <span class="interactiveTxt"></span> LEFT
+            <p class="reg-text websiteDisclaimer"></p>
+            <p class="reg-text websiteUrl"></p>
+            <div class="swipes">
+                <p class="reg-text">
+                    <span class="bigger tapLeft">
+                        <span id="swipeColor1">
+                            <span class="interactiveTxt"></span> LEFT
+                        </span>
+                    </span> 
+                    <span class="leftSwipeTxt">
+                        to get started
                     </span>
-                </span> 
-                <span class="leftSwipeTxt">
-                    to get started
-                </span>
-            </p>
-            <p class="reg-text">
-                <span class="bigger">
-                    <span id="swipeColor2">
-                        <span class="interactiveTxt"></span> RIGHT
+                </p>
+                <p class="reg-text">
+                    <span class="bigger">
+                        <span id="swipeColor2">
+                            <span class="interactiveTxt"></span> RIGHT
+                        </span>
+                    </span> 
+                    <span class="rightSwipeTxt">
+                    if you wanna learn more
                     </span>
-                </span> 
-                <span class="rightSwipeTxt">
-                if you wanna learn more
-                </span>
+                </p>
+            </div>
+            <button class="btn btn-success bigger kindnessComplete">Kindness Complete</button>
+            <div class="kindnessSelected">
+                <div class="emailEnterContainer">
+                    <p class="reg-text bigger mb-0">
+                        <span id="swipeColor3">
+                            Want a reminder?
+                        </span>
+                    </p>
+                    <div class="input-group mb-1 enterEmail">
+                        <input type="text" class="form-control" placeholder="Your email">
+                        <div class="input-group-append">
+                          <button class="btn btn-success emailSaved">submit</button>
+                        </div>
+                      </div>
+
+                    <p>
+                        As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
+                    </p>
+                </div>
+                <p class="reg-text bigger">
+                    <span id="otherwise">Otherwise,</span> check back when you've completed the kindness.
+                </p>
+            </div>
+            <p onclick="goKindness()" class="reg-text selectAgain cursor-pointer">
+               <u>or click here select a new kindness</u>
             </p>
         </div>
     </div>
@@ -140,9 +174,7 @@
     <script src="js/randomColor.js"></script>
     <script>
         $( document ).ready(function() {
-            randomColor('#swipeColor1');
-            randomColor('#swipeColor2');
-            $('.failureContainer, .imageKudos, .somethingToSayMobile').hide();
+            $('.failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain').hide();
             getData();
         });
     </script>

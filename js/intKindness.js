@@ -6,30 +6,40 @@ function goKindness(){
     usedKindnessInd = [];
   }
 
+  // from selected back to selection
+  $(".kindnessSelected, .selectAgain, .kindnessComplete").hide();
+  $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .levelBg").show();
+  $(".absolute").css("top","35vh");
+
   var uniqueInt = uniqueRandomNum();
   // console.log("uniqueInt:", uniqueInt);
   // console.log('line1: ', line1[uniqueInt]);
   // console.log('image: ', image[uniqueInt]);
     // IMAGE KUDOS
     $(".imageKudos").show().html(thanks[uniqueInt]);
-    $(".tapLeft, .leftSwipe").show();
+    $(".tapLeft, .leftSwipeHitBox").show();
     levelDetails(type[uniqueInt]);
     randomColor('#swipeColor1');
     randomColor('#swipeColor2');
     $(".line1").html(line1[uniqueInt]);
     $(".line2").html(line2[uniqueInt]);
-    $(".website").html("<a href=" + website[uniqueInt] +" target='_blank'>" + website[uniqueInt] + "</a>");
+    if(website[uniqueInt]){
+      $(".websiteDisclaimer").show().html("[accept kindness to reveal website]");
+    } else {
+      $(".websiteDisclaimer").hide();
+    }
+    $(".websiteUrl").hide().html("<a href=" + website[uniqueInt] +" target='_blank'>" + website[uniqueInt] + "</a>");
     $(".bg").css('background-image', 'url("./img/'+ image[uniqueInt] + '")');
     // $(".absolute").css("top","35vh");
     $(".leftSwipeTxt").html("for another suggestion");
     $(".rightSwipeTxt").html("to take on the challenge");
-
   }
 
-function prevKindness(){
-  console.log(line1[usedKindnessInd.length]);
-  usedKindnessInd.splice();
-}
+// function prevKindness(){
+//   const prevKindnessNum = usedKindnessInd[usedKindnessInd.length - 2] || 0;
+//   console.log(line1[prevKindnessNum]);
+//   usedKindnessInd.splice();
+// }
 
 function levelDetails(level){
   $(".levelTxt").html(level);
