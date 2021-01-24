@@ -71,6 +71,24 @@ $(window).on("popstate", function () {
   // }
 });
 
+/*
+* CONTACT ME
+*/
+function contactMe(){
+  kindnessSelected();
+  $(".kindnessSelected").hide();
+  $(".line1").html("<span class='red'>I would ❤️️ to hear from you!</span> For contact, you can hit me <a target='_blank' href='https://twitter.com/mr_moonhead' class='blue'><u>on twitter</u></a>.")
+  $(".line2").html("Or contact me in the form below: <textarea class='w-75' rows='5'></textarea><div><button class='btn btn-success m-10' onclick='contactMeClick()'>Submit message</button></div>")
+}
+
+function contactMeClick(){
+  $(".line1").html("<span class='yellow'>message sent!</span>")
+  $(".line2").html("<span onclick='location.reload()' class='pink cursor-pointer'><u>Return home?</u></span>")
+}
+// contact
+
+
+
 function kindnessSelected(){
   // window.history.pushState("selected", "Kindness Selected", "#/selected-kindness");
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
