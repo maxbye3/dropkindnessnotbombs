@@ -67,7 +67,7 @@ function areFiveOver(){
   }
 }
 
-function checkEmail(email){
+function checkEmail(){
   // check if email is assigned to existing id
   var propertiesToCheck = loadData();
   var email = propertiesToCheck.email;
@@ -76,6 +76,11 @@ function checkEmail(email){
   } else {
     false;
   }
+}
+
+function deleteAll(){
+  localStorage.setItem('userData', JSON.stringify({}));
+  location.reload();
 }
 
 // // assign an email to existing id

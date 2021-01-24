@@ -36,6 +36,10 @@ function contactMe(){
       updateItem(propertiesToSave);
   }
   function kindnessSelected(){
+    var isEmail = checkEmail();
+    if(isEmail){
+        emailEntered();
+    }
     $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
     $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
     $(".leftSwipeTxt").html("if you want to select a new suggestion");
@@ -47,33 +51,30 @@ function contactMe(){
     $(".privateDisclaimer").html("As Frodon once yelled from Mount Sire. Your details <span class='pink'>\"shall not be shared!\"</span>");
   }
   // kindness selected
-  
-  /*
-  * KINDNESS IN PROGRESS
-  */
-  function kindnessInProgress(){
-      kindnessSelected();
-      $(".levelBg, .websiteUrl, .kindnessComplete").show();
-      $(".kindnessSelected, .websiteDisclaimer").hide();
-  }
-  // kindness in progress
 
-  // KINDNESS COMPLETE & IN PROGRESS
+  // KINDNESS COMPLETE & IN SELECTED
   $(".emailSaved").click(function() {
-    var userEmail = $("#userEmail").val();
-    newSaveToDb({id: 2, status: 'in progress', email: userEmail});
+    emailEntered();
+    var email = $("#userEmail").val();
+    var propertiesToSave = loadData();
+    propertiesToSave.email = email;
+    updateItem(propertiesToSave);
+  });
+
+  function emailEntered(){
     $(".emailEnterContainer").hide();
     $("#otherwise").html("great!");
     $(".emailEnter").hide();
     if(state == 'complete'){
-      $(".line1").html("Points have been <span class='yellow'>saved to your email</span>. You will receive confirmation <span class='pink'>in the next few days.</span>");
+      $(".line2").show().html("Points have been <span class='yellow'>saved to your email</span>. You will receive confirmation <span class='pink'>in the next few days.</span>");
     }
-  });
+  }
 
   /*
   * KINDNESS COMPLETE
   */
   $(".kindnessComplete").click(function() {
+    state = 'complete';
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl").hide();
@@ -82,9 +83,21 @@ function contactMe(){
     $(".emailHeader").html("Sign up to save your points:");
     $(".selectAgain").show().html("<u class='text-white bigger'>Click here to select a new kindness</u>");
     $(".privateDisclaimer").html("We ain't sharing your email with no one. <span class='red'>Even if they ask nice.</span>");
-    state = 'complete'
+    emailEntered();
   });  
   // kindness complete
+
+    
+  /*
+  * KINDNESS IN PROGRESS
+  */
+ function kindnessInProgress(){
+    kindnessSelected();
+    $(".levelBg, .websiteUrl, .kindnessComplete").show();
+    $(".kindnessSelected, .websiteDisclaimer").hide();
+  }
+  // kindness in progress
+
   
   /*
   * ABOUT

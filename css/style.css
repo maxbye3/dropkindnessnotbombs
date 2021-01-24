@@ -127,8 +127,11 @@ a {
   height: 75px;
 }
 
+
+
 .disclaimerLink {
   color: #c1c1c1;
+  vertical-align: .5px;
   border-bottom: 1px white solid;
   cursor: pointer;
 }
