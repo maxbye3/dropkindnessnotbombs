@@ -35,6 +35,20 @@ function updateIdInDb(userId, propertiesToSave){
     });
 }
 
+function getUniqueId(){
+    return firebase.database().ref('/kindness').once('value').then((snapshot) => {
+        var data = snapshot.val();
+        // console.log(Object.keys(data).length); // value
+        var id;
+        Object.keys(data).forEach(function (item) {
+            // console.log(data[item]); // value
+            id = data[item].id;
+        });
+        // console.log("id:", id + 1);
+        return id + 1;
+    });
+}
+
 function updateStatus(id){
     firebase.database().ref('/kindness').once('value').then((snapshot) => {
         var data = snapshot.val();
@@ -51,16 +65,13 @@ function updateStatus(id){
     });
 }
 
-function updateSelectedKindness(id, line1){
+function updateSelectedKindness(id, kindness){
     firebase.database().ref('/kindness').once('value').then((snapshot) => {
         var data = snapshot.val();
         Object.keys(data).forEach(function (item) {
-            // console.log(item); // key
-            // console.log(data[item]); // value
-
-            // we're going to update id 2 status
-            if(data[item].id == id){
-                data[item].kindness = line1;
+            if(data[item].id == id){  
+                // updating id with the kindness
+                data[item].kindness = kindness;            
                 updateIdInDb(item, data[item])
             }
         });
