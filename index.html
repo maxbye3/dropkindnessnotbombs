@@ -180,13 +180,14 @@
     <script src="js/google-sheets.js"></script>
     <script src="js/mobile.js"></script>
     <script src="js/swipes.js"></script>
+    <script src="js/views.js"></script>
     <script src="js/intKindness.js"></script>
     <script src="js/randomColor.js"></script>
+    <script src="js/init.js"></script>
     <script>
+        getData();
         $( document ).ready(function() {
-            window.history.pushState('home', "Home", "#/home");
-            $('.failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain').hide();
-            getData();
+            init();
         });
     </script>
 </body>

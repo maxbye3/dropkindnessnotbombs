@@ -15,65 +15,80 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-function newSaveToDb(propertiesToSave){
-    firebase.database().ref('kindness/').push(propertiesToSave, function(error) {
-    if (error) {     
-        console.log('New save error: ', error)
-    } else {
-        console.log("New save success!");
-    }
-    });
+function newSave(propertiesToSave){
+    return firebase.database().ref('kindness/').push(propertiesToSave, function(error) {
+        if (error) {     
+            console.log('New save error: ', error)
+        } else {
+            console.log("New save success! Placing to local storage: ", propertiesToSave);
+            localStorage.setItem('userData', JSON.stringify(propertiesToSave));
+        }
+    }).getKey();
 }
 
-function updateIdInDb(userId, propertiesToSave){
-    firebase.database().ref('kindness/' + userId).set(propertiesToSave, function(error) {
+function updateIdInDb(propertiesToSave){
+    firebase.database().ref('kindness/' + propertiesToSave.id).set(propertiesToSave, function(error) {
     if (error) {     
         console.log('Update error: ', error)
     } else {
-        console.log("Update success!");
+        console.log("Saving to local storage: ", propertiesToSave);        
+        localStorage.setItem('userData', JSON.stringify(propertiesToSave));
+        
     }
     });
 }
 
-function getUniqueId(){
-    return firebase.database().ref('/kindness').once('value').then((snapshot) => {
-        var data = snapshot.val();
-        // console.log(Object.keys(data).length); // value
-        var id;
-        Object.keys(data).forEach(function (item) {
-            // console.log(data[item]); // value
-            id = data[item].id;
-        });
-        // console.log("id:", id + 1);
-        return id + 1;
-    });
-}
+// function getUniqueId(){
+//     return firebase.database().ref('/kindness').once('value').then((snapshot) => {
+//         var data = snapshot.val();
+//         // console.log(Object.keys(data).length); // value
+//         var id;
+//         Object.keys(data).forEach(function (item) {
+//             // console.log(data[item]); // value
+//             id = data[item].id;
+//         });
+//         // console.log("id:", id + 1);
+//         return id + 1;
+//     });
+// }
 
-function updateStatus(id){
-    firebase.database().ref('/kindness').once('value').then((snapshot) => {
-        var data = snapshot.val();
-        Object.keys(data).forEach(function (item) {
-            // console.log(item); // key
-            // console.log(data[item]); // value
+// function updateStatus(id){
+//     firebase.database().ref('/kindness').once('value').then((snapshot) => {
+//         var data = snapshot.val();
+//         Object.keys(data).forEach(function (item) {
+//             // console.log(item); // key
+//             // console.log(data[item]); // value
 
-            // we're going to update id 2 status
-            if(data[item].id == id){
-                data[item].status = 'complete';
-                updateIdInDb(item, data[item])
-            }
-        });
-    });
-}
+//             // we're going to update id 2 status
+//             if(data[item].id == id){
+//                 data[item].status = 'complete';
+//                 updateIdInDb(item, data[item])
+//             }
+//         });
+//     });
+// }
 
-function updateSelectedKindness(id, kindness){
-    firebase.database().ref('/kindness').once('value').then((snapshot) => {
-        var data = snapshot.val();
-        Object.keys(data).forEach(function (item) {
-            if(data[item].id == id){  
-                // updating id with the kindness
-                data[item].kindness = kindness;            
-                updateIdInDb(item, data[item])
-            }
-        });
-    });
-}
+// function updateSelectedKindness(id, kindness){
+//     firebase.database().ref('/kindness').once('value').then((snapshot) => {
+//         var data = snapshot.val();
+//         Object.keys(data).forEach(function (item) {
+//             if(data[item].id == id){  
+//                 // updating id with the kindness
+//                 data[item].kindness = kindness;            
+//                 updateIdInDb(item, data[item])
+//             }
+//         });
+//     });
+// }
+// function updateEmail(id, email){
+//     firebase.database().ref('/kindness').once('value').then((snapshot) => {
+//         var data = snapshot.val();
+//         Object.keys(data).forEach(function (item) {
+//             if(data[item].id == id){  
+//                 // updating id with the kindness
+//                 data[item].kindness = kindness;            
+//                 updateIdInDb(item, data[item])
+//             }
+//         });
+//     });
+// }

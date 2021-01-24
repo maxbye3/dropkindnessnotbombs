@@ -1,6 +1,8 @@
 var usedKindnessInd = [];
+var currentKindness;
 
 function goKindness(){
+  state = 'kindness';
   if(usedKindnessInd.length == line1.length){
     usedKindnessInd = [];
   }
@@ -18,20 +20,33 @@ function goKindness(){
     // IMAGE KUDOS
     $(".imageKudos").show().html(thanks[uniqueInt]);
     $(".tapLeft, .leftSwipeHitBox").show();
-    levelDetails(type[uniqueInt]);
     randomColor('#swipeColor1');
     randomColor('#swipeColor2');
-    $(".line1").html(line1[uniqueInt]);
-    $(".line2").html(line2[uniqueInt]);
-    if(website[uniqueInt]){
+    // setup current Kindness
+    currentKindness = {
+      line1: line1[uniqueInt],
+      line2: line2[uniqueInt], 
+      website: website[uniqueInt],
+      image: image[uniqueInt],
+      type: type[uniqueInt],
+      dateSelected: Date.now()
+    };
+    kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, currentKindness.type);
+    // unique
+    if(website){      
       $(".websiteDisclaimer").show().html("[accept kindness to reveal website]");
-    } else {
-      $(".websiteDisclaimer").hide();
-    }
-    $(".websiteUrl").hide().html("<a href=" + website[uniqueInt] +" target='_blank'>" + website[uniqueInt] + "</a>");
-    $(".bg").css('background-image', 'url("./img/'+ image[uniqueInt] + '")');
+    } 
+    $(".websiteUrl").hide();
     $(".leftSwipeTxt").html("for another suggestion");
     $(".rightSwipeTxt").html("to take on the challenge");
+  }
+
+  function kindnessView(line1, line2, website, image, type){
+    $(".line1").html(line1);
+    $(".line2").html(line2);
+    $(".websiteUrl").html("<a href=" + website +" target='_blank'>" + website + "</a>");
+    $(".bg").css('background-image', 'url("./img/'+ image + '")');
+    levelDetails(type);
   }
 
 // function prevKindness(){
