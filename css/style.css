@@ -179,10 +179,10 @@ a {
 
 .somethingToSay{
   position: absolute; 
+  right: 0px;
 }
 
 .somethingToSayMobile{
-  right: 0px;
   border-top: solid 1px #999;
 }
 

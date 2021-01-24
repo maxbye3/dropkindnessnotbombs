@@ -1,7 +1,6 @@
 var usedKindnessInd = [];
 
 function goKindness(){
-
   if(usedKindnessInd.length == line1.length){
     usedKindnessInd = [];
   }

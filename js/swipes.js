@@ -9,6 +9,8 @@ $(".leftSwipeHitBox").click(function() {
 
 $(".rightSwipeHitBox").click(function() {
   if(state === 'intro'){
+    // one time push state
+    window.history.pushState("select", "Kindness Select", "#/kindness-select");
     state = 'kindness';
     goKindness();
   } else { // kindness
@@ -20,6 +22,7 @@ $(".rightSwipeHitBox").click(function() {
 
 
 $(".kindnessComplete").click(function() {
+  // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
   kindnessSelected();
   $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl").hide();
   $(".statusHeading").html("<span class='blue'>Nice job!</span>");
@@ -50,7 +53,26 @@ $(".navbar-toggler").click(function() {
   $(".somethingToSayMobile").toggle();
 });
 
+
+
+$(window).on("popstate", function () {
+  console.log(history.state);
+  if(history.state == 'home'){
+    location.reload();
+  }
+  if(history.state == 'select'){
+    goKindness();
+  }
+  // if(history.state == 'selected'){
+  //   kindnessSelected();
+  // }
+  // if(history.state == 'completed'){
+  //   $(".kindnessComplete").click();
+  // }
+});
+
 function kindnessSelected(){
+  // window.history.pushState("selected", "Kindness Selected", "#/selected-kindness");
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
   $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
   $(".leftSwipeTxt").html("if you want to select a new suggestion");

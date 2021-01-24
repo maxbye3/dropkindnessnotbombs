@@ -183,6 +183,7 @@
     <script src="js/randomColor.js"></script>
     <script>
         $( document ).ready(function() {
+            window.history.pushState('home', "Home", "#/home");
             $('.failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain').hide();
             getData();
         });
