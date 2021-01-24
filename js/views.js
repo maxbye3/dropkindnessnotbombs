@@ -62,6 +62,7 @@ function contactMe(){
   });
 
   function emailEntered(){
+      console.log("email entered");
     $(".emailEnterContainer").hide();
     $("#otherwise").html("great!");
     $(".emailEnter").hide();
@@ -75,6 +76,9 @@ function contactMe(){
   */
   $(".kindnessComplete").click(function() {
     state = 'complete';
+    var propertiesToSave = loadData();
+    propertiesToSave.status = "complete";
+    updateItem(propertiesToSave);
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl").hide();
@@ -83,7 +87,10 @@ function contactMe(){
     $(".emailHeader").html("Sign up to save your points:");
     $(".selectAgain").show().html("<u class='text-white bigger'>Click here to select a new kindness</u>");
     $(".privateDisclaimer").html("We ain't sharing your email with no one. <span class='red'>Even if they ask nice.</span>");
-    emailEntered();
+    var isEmail = checkEmail();
+    if(isEmail){
+        emailEntered();
+    }
   });  
   // kindness complete
 

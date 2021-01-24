@@ -29,7 +29,6 @@ function newUser(kindness){
     email: '', 
     status: 'in progress', 
     kindness: kindness || '',
-    dateSelected: false,
   };
   // save in DB
   newUser.id = newSave(newUser);
@@ -49,29 +48,29 @@ function loadData(){
 // }
 
 // check if five minutes are over in local storage
-function areFiveOver(){
-  var propertiesToCheck = loadData();
-  var dateThen = propertiesToCheck.date;
-  var dateNow = Date.now();
-  // var today = new Date();
-  // var Christmas = new Date("2012-12-25");
-  var diffMs = (dateNow - dateThen); // milliseconds between now & Christmas
-  // var diffDays = Math.floor(diffMs / 86400000); // days
-  // var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
-  var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-  // console.log('diffMins: ', diffMins);
-  if(diffMins >= 5){
-    return true;
-  } else {
-    return false;
-  }
-}
+// function areFiveOver(){
+//   var propertiesToCheck = loadData();
+//   var dateThen = propertiesToCheck.date;
+//   var dateNow = Date.now();
+//   // var today = new Date();
+//   // var Christmas = new Date("2012-12-25");
+//   var diffMs = (dateNow - dateThen); // milliseconds between now & Christmas
+//   // var diffDays = Math.floor(diffMs / 86400000); // days
+//   // var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
+//   var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+//   // console.log('diffMins: ', diffMins);
+//   if(diffMins >= 5){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 function checkEmail(){
   // check if email is assigned to existing id
   var propertiesToCheck = loadData();
   var email = propertiesToCheck.email;
-  if(email.length > 0){
+  if(email && email.length > 0){
     return true;
   } else {
     false;

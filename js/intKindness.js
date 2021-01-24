@@ -29,7 +29,6 @@ function goKindness(){
       website: website[uniqueInt],
       image: image[uniqueInt],
       type: type[uniqueInt],
-      dateSelected: Date.now()
     };
     kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, currentKindness.type);
     // unique
