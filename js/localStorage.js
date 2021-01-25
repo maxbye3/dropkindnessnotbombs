@@ -26,7 +26,6 @@ function updateItem(userData){
 
 function newUser(kindness){
   var newUser = {
-    email: '', 
     status: 'in progress', 
     kindness: kindness || '',
   };

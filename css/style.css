@@ -11,6 +11,7 @@
   src: url(../font/helvetica/HelveticaNeueBd.ttf);
 }
 
+
 .navbar{
   position: fixed;
   width: 100%;
@@ -219,10 +220,20 @@ a {
   color: white; 
 }
 
+/*
+* EMAIL
+*/
+.emailContainerTxt {
+  color: rgb(82 79 79);
+}
+
 .emailEnterContainer {
   padding-left: 25%;
   padding-right: 25%;
 }
+/* email */
+
+
 
 .selectAgainGrayTxt{
   color: #b9c2ef;

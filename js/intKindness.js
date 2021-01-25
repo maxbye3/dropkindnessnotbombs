@@ -3,12 +3,13 @@ var currentKindness;
 
 function goKindness(){
   state = 'kindness';
+  
   if(usedKindnessInd.length == line1.length){
     usedKindnessInd = [];
   }
 
   // from selected back to selection
-  $(".kindnessSelected, .selectAgain, .kindnessComplete").hide();
+  $(".enterEmailContainer, .kindnessSelected, .selectAgain, .kindnessComplete").hide();
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .levelBg").show();
   $(".absolute").css({"top":"35vh"});
   $(".bg").css({"opacity": ".5"});

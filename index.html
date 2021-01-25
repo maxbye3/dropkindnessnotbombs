@@ -106,27 +106,10 @@
                     </span>
                 </p>
             </div>
+            
+              
             <button class="btn btn-success bigger kindnessComplete">Kindness Complete</button>
             <div class="kindnessSelected">
-                <div class="emailEnterContainer">
-                    <p class="reg-text bigger mb-0">
-                        <span id="swipeColor3">
-                            <span class="emailHeader">
-                                Want a reminder?
-                            </span>
-                        </span>
-                    </p>
-                    <div class="input-group mb-1 enterEmail">
-                        <input type="text" class="form-control" placeholder="Your email" id="userEmail">
-                        <div class="input-group-append">
-                          <button class="btn btn-success emailSaved">submit</button>
-                        </div>
-                      </div>
-
-                    <p class="privateDisclaimer">
-                        As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
-                    </p>
-                </div>
                 <p class="reg-text bigger otherWiseTxt">
                     <span id="otherwise">Otherwise,</span> check back when you've completed the kindness.
                 </p>
@@ -134,8 +117,37 @@
             <p onclick="goKindness()" class="reg-text cursor-pointer selectAgain">
                <u class="selectAgainGrayTxt">or click here to select a new kindness</u>
             </p>
+
+            <div class="card enterEmailContainer">
+                <div class="card-body p-0">
+                    <div class="emailFound">
+                        <p class="emailContainerTxt emailFoundTxt mt-3"></p>
+                    </div>
+                    <div class="noEmail">
+                        <p class="reg-text bigger mb-0 mt-3">
+                            <span class="emailHeader">
+                                    <span class="darkPink">
+                                    Want a reminder?
+                                </span>
+                            </span>
+                        </p>
+                        <p class="emailContainerTxt m-2">
+                            Enter your email below to receive a gentle nagging later
+                          </p>
+                          <div class="input-group mb-1 enterEmail">
+                              <input type="text" class="form-control" placeholder="Your email" id="userEmail">
+                              <div class="input-group-append">
+                                  <button class="btn btn-success emailSaved">submit</button>
+                              </div>
+                          </div>                    
+                          <p class="privateDisclaimer">
+                              As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
+                          </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
     
     <!-- FOLLOW ME -->
@@ -180,6 +192,7 @@
     <script src="js/firebase.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/google-sheets.js"></script>
+    <script src="js/email-reminder.js"></script>
     <script src="js/mobile.js"></script>
     <script src="js/swipes.js"></script>
     <script src="js/views.js"></script>
