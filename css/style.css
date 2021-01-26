@@ -142,7 +142,7 @@ a {
 }
 
 .followMe{
-  z-index: 20;
+  z-index: 1;
   position: absolute;
   left: 0px;
   color: white;
@@ -221,8 +221,32 @@ a {
 }
 
 /*
+* WHAT'S NEXT
+*/
+.whatsNextContainer{
+  border-top: 1px solid white;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: -5px;
+}
+
+.selectAgainGrayTxt{
+  color: #b9c2ef;
+  text-decoration: underline;
+}
+
+.selectAgain{
+  margin-top: 0px;
+}
+
+/* what's next */
+/*
 * EMAIL
 */
+.enterEmailContainer{
+  margin-top: 25px;
+}
+
 .emailContainerTxt {
   color: rgb(82 79 79);
 }
@@ -235,10 +259,7 @@ a {
 
 
 
-.selectAgainGrayTxt{
-  color: #b9c2ef;
-  text-decoration: underline;
-}
+
 
 .kindnessSelectedTxt {
   color: #1d2124;

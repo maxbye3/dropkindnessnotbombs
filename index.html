@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="css/responsive.css"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="app" />
+<meta property="og:title"         content="The Kindness App" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 
 </head>
 <body>    
@@ -105,19 +112,21 @@
                     if you wanna learn more
                     </span>
                 </p>
-            </div>
-            
-              
-            <button class="btn btn-success bigger kindnessComplete">Kindness Complete</button>
-            <div class="kindnessSelected">
-                <p class="reg-text bigger otherWiseTxt">
-                    <span id="otherwise">Otherwise,</span> check back when you've completed the kindness.
+            </div>            
+            <!-- WHAT'S NEXT -->
+            <div class="whatsNextContainer">
+                <p class="reg-text">
+                    <span class="bigger">
+                        kindness complete? <span class="red cursor-pointer"><u>Click here</u></span>
+                    </span>
                 </p>
+
             </div>
             <p onclick="goKindness()" class="reg-text cursor-pointer selectAgain">
                <u class="selectAgainGrayTxt">or click here to select a new kindness</u>
             </p>
-
+            <!-- what's next -->
+            <!-- EMAIL CONTAINER -->
             <div class="card enterEmailContainer">
                 <div class="card-body p-0">
                     <div class="emailFound">
@@ -144,9 +153,9 @@
                               As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
                           </p>
                     </div>
-                    </div>
                 </div>
             </div>
+            <!-- email -->
         </div>
 
     

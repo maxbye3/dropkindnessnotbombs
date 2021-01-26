@@ -11,13 +11,14 @@ $(".somethingToSayMobile").toggle();
   * ABOUT
   */
  function goAbout(){
-  $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos").hide();
+  $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt").hide();
+  $(".swipes, .rightSwipeHitBox").show();  
   history.pushState("about", "About", "#/about");
   state = 'intro';
   $(".tapLeft, .leftSwipeHitBox").hide();
   $(".line1").html("Two years ago I made the Kindness App <span class='smallTxt'>almost 10,000 downloads on iOS and Android but whose counting</span>");
-  $(".line2").html("This site, has all that content without <span class='pink'>platitudes</span>, <span class='blue'>fluff</span> or <span class='green'>schmultz</span> to make the world a better place");
-  $(".leftSwipeTxt").html("<span class='yellow'>click the <img src='img/megaphone.png' width='40px'> if you can think of a way to improve the site </span><span class='smallTxt red'>love to hear from ya!</span>");
+  $(".line2").html("This site, has all that content (+100 suggestions) without <span class='pink'>platitudes</span>, <span class='blue'>fluff</span> or <span class='green'>schmultz</span> to make the world a better place");
+  $(".leftSwipeTxt").html("<span class='yellow'>click the <img src='img/megaphone_black.png' width='40px'> if you can think of a way to improve the site </span><span class='smallTxt red'>love to hear from ya!</span>");
   $(".rightSwipeTxt").html("to get started");
   randomColor('#swipeColor1');
   randomColor('#swipeColor2');
@@ -63,6 +64,10 @@ function contactMe(){
   function kindnessSelected(){
     showReminder('in progress');
     $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
+    // Whats next
+    $(".whatsNextContainer").show();
+    $(".whatsNextContainer p").html("<span class='bigger yellow'>Good luck!</span> check back here in five!  <span class='smallTxt'>(or just refresh the page).</span>")
+
     $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
     $(".leftSwipeTxt").html("if you want to select a new suggestion");
     $(".absolute").css({"top":"25vh"});
@@ -75,7 +80,8 @@ function contactMe(){
   /*
   * KINDNESS COMPLETE
   */
-  $(".kindnessComplete").click(function() {
+  function kindnessComplete(){
+    newUser(); // new user
     state = 'complete';
     var propertiesToSave = loadData();
     propertiesToSave.status = "complete";
@@ -83,14 +89,12 @@ function contactMe(){
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
     showReminder('completed');
-    $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl").hide();
+    $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl, .whatsNextContainer, .selectAgainGrayTxt").hide();
     $(".statusHeading").html("<span class='blue'>Nice job!</span>");
     $(".line1").html("Performing this kindness has scored you <span class='pink'>" + '100' + "</span> points.");
-    // $(".emailHeader").html("Sign up to save your points:");
-    $(".selectAgain").show().html("<u class='text-white bigger'>Click here to select a new kindness</u>");
-
- 
-  });  
+    $(".whatsNextContainer").show();
+    $(".whatsNextContainer p").html("<u class='cursor-pointer bigger' onclick='newUser(); goKindness()'><span class='yellow'>Click here</span> to select a new kindness</u>")
+  } 
   // kindness complete
 
 
@@ -102,6 +106,14 @@ function contactMe(){
     // show reminder
     showReminder('in progress');
     kindnessSelected();
+    $(".whatsNextContainer").show();
+    // check date
+    if(areFiveOver() == 'times up'){
+      $(".whatsNextContainer p").html("<span class='bigger'> kindness complete? <span class='red cursor-pointer'><u onclick='kindnessComplete()'>Click here</u></span></span>");
+    } else{
+      $(".whatsNextContainer p").html("Love the enthusiasm but please spend " + areFiveOver() + " minutes more working on that kindness.");
+    }
+
     $(".levelBg, .websiteUrl, .kindnessComplete").show();
     $(".kindnessSelected, .websiteDisclaimer").hide();
   }

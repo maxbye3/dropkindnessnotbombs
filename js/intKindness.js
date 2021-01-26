@@ -9,7 +9,7 @@ function goKindness(){
   }
 
   // from selected back to selection
-  $(".enterEmailContainer, .kindnessSelected, .selectAgain, .kindnessComplete").hide();
+  $(".enterEmailContainer, .kindnessSelected, .selectAgain, .kindnessComplete, .whatsNextContainer").hide();
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .levelBg").show();
   $(".absolute").css({"top":"35vh"});
   $(".bg").css({"opacity": ".5"});
@@ -30,6 +30,7 @@ function goKindness(){
       website: website[uniqueInt],
       image: image[uniqueInt],
       type: type[uniqueInt],
+      date: Date.now(),
     };
     kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, currentKindness.type);
     // unique
