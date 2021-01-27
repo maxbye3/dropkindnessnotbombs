@@ -11,7 +11,7 @@ $(".somethingToSayMobile").toggle();
   * ABOUT
   */
  function goAbout(){
-  $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt").hide();
+  $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt, .enterEmailContainer").hide();
   $(".swipes, .rightSwipeHitBox, .enterEmail").show();  
   history.pushState("about", "About", "#/about");
   state = 'intro';
@@ -34,7 +34,7 @@ $(".somethingToSayMobile").toggle();
 */
 function contactMe(){
     kindnessSelected();
-    $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos").hide();
+    $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .whatsNextContainer, .enterEmailContainer").hide();
     $(".enterEmail").show();
     var line1 = "<span class='red'>I would ❤️️ to hear from you!</span> For contact, you can hit me <a target='_blank' href='https://twitter.com/mr_moonhead' class='blue'><u>on twitter</u></a>.";
     var line2 = "<span onclick='goAbout()' class='blue cursor-pointer'><u>Click here</u></span> if your hankering to know what this site is about.";
@@ -83,6 +83,10 @@ function contactMe(){
   * KINDNESS COMPLETE
   */
   function kindnessComplete(){
+    $("#startConfetti").click()
+    setTimeout(function(){ 
+        $("#stopConfetti").click(); 
+    }, 3000);
 
     // complete tastk
     var propertiesToSave = loadData();

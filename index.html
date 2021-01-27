@@ -18,6 +18,12 @@
 
 </head>
 <body>    
+    <!-- CONFETTI -->
+    <div style="position:relative;z-index:99;"></div>
+    <button hidden id="startConfetti">Start</button>
+    <button hidden id="stopConfetti">Stop</button>
+    <button hidden id="restartConfetti">Restart</button>        
+    <!-- confetti -->
     <header>  
         <div class="navbar bg-light navbar-light box-shadow">
             <div class="d-flex justify-content-between w-100">
@@ -113,6 +119,7 @@
                     </span>
                 </p>
             </div>            
+
             <!-- WHAT'S NEXT -->
             <div class="whatsNextContainer">
                 <p class="reg-text">
@@ -199,6 +206,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/firebase.js"></script>
+    <script src="js/jquery.confetti.js"></script>
     <script src="js/localStorage.js"></script>
     <script src="js/google-sheets.js"></script>
     <script src="js/email-reminder.js"></script>
