@@ -129,7 +129,6 @@ a {
 }
 
 
-
 .disclaimerLink {
   color: #c1c1c1;
   vertical-align: .5px;
@@ -238,6 +237,13 @@ a {
 .selectAgain{
   margin-top: 0px;
 }
+
+.whatsNextEmail {
+  color: #2f2e2e;
+  border-top: black solid 1px;
+  padding: 20px;
+}
+
 
 /* what's next */
 /*

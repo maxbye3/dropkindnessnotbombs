@@ -1,6 +1,8 @@
 function init(){
+  
   history.pushState('home', "Home", "#/home");
-  $('.whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();
+  $('.whatsNextEmail, .whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();
+  
   
   
   // Check if in progress

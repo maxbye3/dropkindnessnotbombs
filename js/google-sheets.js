@@ -33,7 +33,6 @@ function getData(){
           }
           if(data.feed.entry[i].gsx$type){
             type.push(data.feed.entry[i].gsx$type.$t);
-            // console.log('Type: ', data.feed.entry[i].gsx$type.$t);
           }
           
         }

@@ -1,5 +1,5 @@
 var usedKindnessInd = [];
-var currentKindness;
+var currentKindness = {};
 
 function goKindness(){
   state = 'kindness';
@@ -29,10 +29,10 @@ function goKindness(){
       line2: line2[uniqueInt], 
       website: website[uniqueInt],
       image: image[uniqueInt],
-      type: type[uniqueInt],
+      score: 0,
       date: Date.now(),
     };
-    kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, currentKindness.type);
+    kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, type[uniqueInt]);
     // unique
     if(website){      
       $(".websiteDisclaimer").show().html("[accept kindness to reveal website]");
@@ -61,9 +61,11 @@ function levelDetails(level){
   if(level== "simple"){
     $(".levelBg").css("background", "#67bbc4");
     $(".levelCircle").css("background", "#9dcdd3").html("100");
+    currentKindness.score = 100;
   } else { // ambitious
     $(".levelBg").css("background", "#ee752f");
     $(".levelCircle").css("background", "#ee9c6d").html("200");
+    currentKindness.score = 200;
 
   }
 }

@@ -12,7 +12,7 @@ $(".somethingToSayMobile").toggle();
   */
  function goAbout(){
   $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt").hide();
-  $(".swipes, .rightSwipeHitBox").show();  
+  $(".swipes, .rightSwipeHitBox, .enterEmail").show();  
   history.pushState("about", "About", "#/about");
   state = 'intro';
   $(".tapLeft, .leftSwipeHitBox").hide();
@@ -35,6 +35,7 @@ $(".somethingToSayMobile").toggle();
 function contactMe(){
     kindnessSelected();
     $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos").hide();
+    $(".enterEmail").show();
     var line1 = "<span class='red'>I would ❤️️ to hear from you!</span> For contact, you can hit me <a target='_blank' href='https://twitter.com/mr_moonhead' class='blue'><u>on twitter</u></a>.";
     var line2 = "<span onclick='goAbout()' class='blue cursor-pointer'><u>Click here</u></span> if your hankering to know what this site is about.";
     $(".line1").html(line1 + '<br>' + line2);
@@ -74,6 +75,7 @@ function contactMe(){
     $(".bg").css({"opacity": ".3"});
     $(".selectAgain").show().html("<u class='selectAgainGrayTxt'>or click here to select a new kindness</u>");
     $(".statusHeading").html("<span class='strongRed'>KINDNESS SELECTED:</span>");
+    $(".whatsNextEmail").hide();
   }
   // kindness selected
 
@@ -81,19 +83,23 @@ function contactMe(){
   * KINDNESS COMPLETE
   */
   function kindnessComplete(){
-    newUser(); // new user
-    state = 'complete';
+
+    // complete tastk
     var propertiesToSave = loadData();
+    var score = propertiesToSave.kindness.score;
     propertiesToSave.status = "complete";
+    updateItem(propertiesToSave);
+    // new user
+    propertiesToSave.id = false;    
     updateItem(propertiesToSave);
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
     showReminder('completed');
+    
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl, .whatsNextContainer, .selectAgainGrayTxt").hide();
     $(".statusHeading").html("<span class='blue'>Nice job!</span>");
-    $(".line1").html("Performing this kindness has scored you <span class='pink'>" + '100' + "</span> points.");
-    $(".whatsNextContainer").show();
-    $(".whatsNextContainer p").html("<u class='cursor-pointer bigger' onclick='newUser(); goKindness()'><span class='yellow'>Click here</span> to select a new kindness</u>")
+    $(".line1").html("Performing this kindness has scored you <span class='pink'>" + score + "</span> points.");
+    $(".whatsNextEmail").show();
   } 
   // kindness complete
 

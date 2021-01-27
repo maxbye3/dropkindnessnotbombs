@@ -31,7 +31,7 @@ function newUser(kindness){
 
   var newUser = {
     status: 'in progress', 
-    kindness: kindness || '',
+    kindness: false,
     id: '',
     email: email || '',
   };
@@ -76,13 +76,14 @@ function checkEmail(){
   var propertiesToCheck = loadData();
   var email = propertiesToCheck.email;
   if(email && email.length > 0){
-    return true;
+    return email;
   } else {
     false;
   }
 }
 
 function deleteAll(){
+  var retrievedObject = localStorage.getItem('userData');
   localStorage.setItem('userData', JSON.stringify({}));
   location.reload();
 }
