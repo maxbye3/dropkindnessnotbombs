@@ -130,7 +130,7 @@ function contactMeClick(){
     if(areFiveOver() == 'times up'){
       $(".whatsNextContainer p").html("<span class='bigger'> kindness complete? <span class='red cursor-pointer'><u onclick='kindnessComplete()'>Click here</u></span></span>");
     } else{
-      $(".whatsNextContainer p").html("Love the enthusiasm but please spend " + areFiveOver() + " minutes more working on that kindness.");
+      $(".whatsNextContainer p").html("Love the enthusiasm but please spend <span class='pink'>" + areFiveOver() + "</span> minutes more working on that kindness.");
     }
 
     $(".levelBg, .websiteUrl, .kindnessComplete").show();

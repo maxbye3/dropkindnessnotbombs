@@ -146,12 +146,12 @@ a {
 .followMe{
   z-index: 1;
   position: absolute;
-  left: 0px;
   color: white;
   padding: 5px;
   border-radius: 0px 0px 0px 5px;
-  top: 91%;
-  float: right;
+  position: absolute;
+  right: 0px;
+  top: 82px;
 }
 
 .followMe img {

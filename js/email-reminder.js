@@ -22,9 +22,7 @@ function noEmail(permission){
       $(".reminderInProgress").hide();
       $(".reminderComplete").show();
       $(".bg").css("height", "90vh");
-      $(".followMe").css({"position": "absolute"});
     } else if ('in progress'){  
-      $(".followMe").css({"position": "initial"});
       $(".reminderInProgress").show();
       $(".reminderComplete").hide();
       $(".bg").css("height", "75vh");
