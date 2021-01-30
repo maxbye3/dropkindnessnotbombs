@@ -167,11 +167,22 @@ a {
   font-family: BebasNeue;
 }
 
-.absolute{
+/*
+* SCREEN TOP
+*/
+.kindnessTop, .aboutTop, .contactTop, .completeTop, .progressTop {
+  position: absolute;
   z-index: 2;
   position: absolute;
   top: 35vh;
+  width: 100vw;
 }
+
+.aboutTop {
+  top: 30vh;
+}
+
+/* screen top */
 
 .center {
   text-align: center;

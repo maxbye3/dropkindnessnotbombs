@@ -1,5 +1,5 @@
 function init(){
-  
+  $("#stage").addClass("aboutTop");
   history.pushState('home', "Home", "#/home");
   // history.pushState('home', "Home", "#/dropkindnessnotbombs");
   $('.reminderComplete, .reminderInProgress, .whatsNextEmail, .whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();

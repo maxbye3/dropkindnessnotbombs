@@ -9,6 +9,9 @@
 * WIDTH
 */
 @media all and (min-width: 1200px) {
+
+
+
   #contactMessage {
     font-size: 1.5vw;
   }
@@ -17,9 +20,14 @@
     font-size: 2vw;
   }
 
-  .absolute{
+  .kindnessTop, .aboutTop, .contactTop, .completeTop, .progressTop {
     top: 20vh;
   }
+
+  .kindnessTop {
+    top: 27vh;
+  }
+
 }
 
 @media all and (min-width: 130px) {
@@ -36,8 +44,7 @@
   .isMobile {
     display: block;
   }
-
-  .absolute {
+  .kindnessTop, .aboutTop, .contactTop, .completeTop, .progressTop {   
     top: 25vh;
   }
 
@@ -69,7 +76,7 @@
 }
 
 @media all and (max-width: 400px) {
-  .absolute {
+  .kindnessTop, .aboutTop, .contactTop, .completeTop, .progressTop {
     top: 25vh;
   }
 
@@ -82,7 +89,7 @@
 * HEIGHT
 */
 @media all and (max-height: 400px) {
-  .absolute {
+  .kindnessTop, .aboutTop, .contactTop, .completeTop, .progressTop {
     top: 47vh;
   }
 

@@ -3,7 +3,7 @@ var currentKindness = {};
 
 function goKindness(){
   state = 'kindness';
-  
+  $("#stage").removeClass().addClass("kindnessTop");
   if(usedKindnessInd.length == line1.length){
     usedKindnessInd = [];
   }

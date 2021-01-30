@@ -11,6 +11,7 @@ $(".somethingToSayMobile").toggle();
   * ABOUT
   */
  function goAbout(){
+  $("#stage").removeClass().addClass("aboutTop");
   $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt, .enterEmailContainer").hide();
   $(".swipes, .rightSwipeHitBox, .enterEmail").show();  
   history.pushState("about", "About", "#/about");
@@ -32,24 +33,25 @@ $(".somethingToSayMobile").toggle();
 * CONTACT ME
 */
 function contactMe(){
-    kindnessSelected();
-    $(".kindnessSelected, .somethingToSayMobile, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .whatsNextContainer, .enterEmailContainer").hide();
-    $(".enterEmail").show();
-    var line1 = "<span class='red'>I would ❤️️ to hear from you!</span> For contact, you can hit me <a target='_blank' href='https://twitter.com/mr_moonhead' class='blue'><u>on twitter</u></a>.";
-    var line2 = "<span onclick='goAbout()' class='blue cursor-pointer'><u>Click here</u></span> if your hankering to know what this site is about.";
-    $(".line1").html(line1 + '<br>' + line2);
-    var email = '<div class="emailInput input-group mb-3"><div class="input-group-prepend"><span class="input-group-text">@</span></div><input type="text" class="form-control" placeholder="Your Email" id="contactEmail"></div>';
-    $(".line2").html("Or contact me in the form below: <textarea class='w-75' rows='5' id='contactMessage'></textarea>" +email+  "<div><button class='btn btn-success m-10' onclick='contactMeClick()'>Submit message</button></div>");
-  }
+  $("#stage").removeClass().addClass("contactTop");
+  kindnessSelected();
+  $(".kindnessSelected, .somethingToSayMobile, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .whatsNextContainer, .enterEmailContainer").hide();
+  $(".enterEmail").show();
+  var line1 = "<span class='red'>I would ❤️️ to hear from you!</span> For contact, you can hit me <a target='_blank' href='https://twitter.com/mr_moonhead' class='blue'><u>on twitter</u></a>.";
+  var line2 = "<span onclick='goAbout()' class='blue cursor-pointer'><u>Click here</u></span> if your hankering to know what this site is about.";
+  $(".line1").html(line1 + '<br>' + line2);
+  var email = '<div class="emailInput input-group mb-3"><div class="input-group-prepend"><span class="input-group-text">@</span></div><input type="text" class="form-control" placeholder="Your Email" id="contactEmail"></div>';
+  $(".line2").html("Or contact me in the form below: <textarea class='w-75' rows='5' id='contactMessage'></textarea>" +email+  "<div><button class='btn btn-success m-10' onclick='contactMeClick()'>Submit message</button></div>");
+}
   
-  function contactMeClick(){
-    var propertiesToSave = loadData();
-    propertiesToSave.message = $("#contactMessage").val();
-    propertiesToSave.contact = $("#contactEmail").val();
-    updateItem(propertiesToSave);
-    $(".line1").html("<span class='yellow'>message sent!</span>")
-    $(".line2").html("<span onclick='location.reload()' class='pink cursor-pointer'><u>Return home?</u></span>")
-  }
+function contactMeClick(){
+  var propertiesToSave = loadData();
+  propertiesToSave.message = $("#contactMessage").val();
+  propertiesToSave.contact = $("#contactEmail").val();
+  updateItem(propertiesToSave);
+  $(".line1").html("<span class='yellow'>message sent!</span>")
+  $(".line2").html("<span onclick='location.reload()' class='pink cursor-pointer'><u>Return home?</u></span>")
+}
   // contact
   
   
@@ -62,6 +64,7 @@ function contactMe(){
       updateItem(propertiesToSave);
   }
   function kindnessSelected(){
+    $("#stage").removeClass().addClass("progressTop");
     showReminder('in progress');
     $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .websiteDisclaimer").hide();
     // Whats next
@@ -81,6 +84,7 @@ function contactMe(){
   * KINDNESS COMPLETE
   */
   function kindnessComplete(){
+    
     $("#startConfetti").click()
     setTimeout(function(){ 
         $("#stopConfetti").click(); 
@@ -96,9 +100,10 @@ function contactMe(){
     updateItem(propertiesToSave);
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
+    $("#stage").removeClass().addClass("completeTop");
     showReminder('completed');
     $(".enterEmail").show();
-    console.log(1);
+    
     
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl, .whatsNextContainer, .selectAgainGrayTxt").hide();
     $(".statusHeading").html("<span class='blue'>Nice job!</span>");

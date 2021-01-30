@@ -82,87 +82,89 @@
     <div class="swipeContainer">
         <div class="desktop leftSwipeHitBox"></div>
         <div class="desktop rightSwipeHitBox"></div>
-        <div class="absolute center bebas text-white">
-            <div class="kindnessSelected statusHeading bigger">
-                <p class="bigger m-0">
-                    <span class="strongRed">KINDNESS SELECTED:</span>
-                </p>
-            </div>
-            <p class="reg-text line1">
-                <span class="bigger green">What....</span> 
-                <span class="blue">What is this thing?</span>
-            </p>
-            <p class="reg-text line2">
-                It’s sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
-            </p>
-            <p class="reg-text websiteDisclaimer"></p>
-            <p class="reg-text websiteUrl"></p>
-            <div class="swipes">
-                <p class="reg-text">
-                    <span class="bigger tapLeft">
-                        <span id="swipeColor1">
-                            <span class="interactiveTxt"></span> LEFT
-                        </span>
-                    </span> 
-                    <span class="leftSwipeTxt">
-                        to get started
-                    </span>
-                </p>
-                <p class="reg-text">
-                    <span class="bigger">
-                        <span id="swipeColor2">
-                            <span class="interactiveTxt"></span> RIGHT
-                        </span>
-                    </span> 
-                    <span class="rightSwipeTxt">
-                    if you wanna learn more
-                    </span>
-                </p>
-            </div>            
-
-            <!-- WHAT'S NEXT -->
-            <div class="whatsNextContainer">
-                <p class="reg-text">
-                    <span class="bigger">
-                        kindness complete? <span class="red cursor-pointer"><u>Click here</u></span>
-                    </span>
-                </p>
-
-            </div>
-            <p onclick="goKindness()" class="reg-text cursor-pointer selectAgain">
-               <u class="selectAgainGrayTxt">or click here to select a new kindness</u>
-            </p>
-            <!-- what's next -->
-            <!-- EMAIL CONTAINER IS COMPLETE -->
-            <div class="reminderComplete m-10">
-                <div class="enterEmailContainer px-2 py-1">
-                    <p class="reg-text bigger mb-0 mt-3">
-                        <span class="emailHeader">
-                                <span class="darkPink">
-                                Want a reminder?
-                            </span>
-                        </span>
-                    </p>
-                    <p class="emailContainerTxt m-2">
-                        Enter your email below to receive a gentle nagging later
-                    </p>
-                    <div class="enterEmail">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control userEmailComplete" placeholder="Your email">
-                            <div class="input-group-append">
-                                <button class="btn btn-success emailSaved">submit</button>
-                            </div>
-                        </div>                    
-                        <p class="privateDisclaimer">
-                            As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
-                        </p>
-                    </div>
-                    <p class="whatsNextEmail m-25 mb-0 reg-text bigger text-black p-20">
-                        <u class='cursor-pointer bigger' onclick='goKindness()'>Click here to select a new kindness</u>
+        <div class="center bebas text-white">
+            <div class id="stage">
+                <div class="kindnessSelected statusHeading bigger">
+                    <p class="bigger m-0">
+                        <span class="strongRed">KINDNESS SELECTED:</span>
                     </p>
                 </div>
-            </div>
+                <p class="reg-text line1">
+                    <span class="bigger green">What....</span> 
+                    <span class="blue">What is this thing?</span>
+                </p>
+                <p class="reg-text line2">
+                    Sort of like Tinder but instead of being offered singles in your area<br> you perform actions to make the world a better place to live in
+                </p>
+                <p class="reg-text websiteDisclaimer"></p>
+                <p class="reg-text websiteUrl"></p>
+                <div class="swipes">
+                    <p class="reg-text">
+                        <span class="bigger tapLeft">
+                            <span id="swipeColor1">
+                                <span class="interactiveTxt"></span> LEFT
+                            </span>
+                        </span> 
+                        <span class="leftSwipeTxt">
+                            to get started
+                        </span>
+                    </p>
+                    <p class="reg-text">
+                        <span class="bigger">
+                            <span id="swipeColor2">
+                                <span class="interactiveTxt"></span> RIGHT
+                            </span>
+                        </span> 
+                        <span class="rightSwipeTxt">
+                        if you wanna learn more
+                        </span>
+                    </p>
+                </div>            
+
+                <!-- WHAT'S NEXT -->
+                <div class="whatsNextContainer">
+                    <p class="reg-text">
+                        <span class="bigger">
+                            kindness complete? <span class="red cursor-pointer"><u>Click here</u></span>
+                        </span>
+                    </p>
+
+                </div>
+                <p onclick="goKindness()" class="reg-text cursor-pointer selectAgain">
+                <u class="selectAgainGrayTxt">or click here to select a new kindness</u>
+                </p>
+                <!-- what's next -->
+                <!-- EMAIL CONTAINER IS COMPLETE -->
+                <div class="reminderComplete m-10">
+                    <div class="enterEmailContainer px-2 py-1">
+                        <p class="reg-text bigger mb-0 mt-3">
+                            <span class="emailHeader">
+                                    <span class="darkPink">
+                                    Want a reminder?
+                                </span>
+                            </span>
+                        </p>
+                        <p class="emailContainerTxt m-2">
+                            Enter your email below to receive a gentle nagging later
+                        </p>
+                        <div class="enterEmail">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control userEmailComplete" placeholder="Your email">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success emailSaved">submit</button>
+                                </div>
+                            </div>                    
+                            <p class="privateDisclaimer">
+                                As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
+                            </p>
+                        </div>
+                        <p class="whatsNextEmail m-25 mb-0 reg-text bigger text-black p-20">
+                            <u class='cursor-pointer bigger' onclick='goKindness()'>Click here to select a new kindness</u>
+                        </p>
+                    </div>
+                </div>
             <!-- email is complete -->
+            </div>
         </div>
 
     
