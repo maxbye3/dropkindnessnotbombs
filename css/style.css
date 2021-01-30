@@ -151,6 +151,7 @@ a {
   padding: 5px;
   border-radius: 0px 0px 0px 5px;
   top: 91%;
+  float: right;
 }
 
 .followMe img {
@@ -174,13 +175,18 @@ a {
   position: absolute;
   z-index: 2;
   position: absolute;
-  top: 35vh;
+  top: 30vh;
   width: 100vw;
 }
 
 .aboutTop {
   top: 30vh;
 }
+
+.progressTop{
+  top: 25vh;
+}
+
 
 /* screen top */
 

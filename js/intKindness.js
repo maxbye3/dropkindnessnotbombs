@@ -2,6 +2,7 @@ var usedKindnessInd = [];
 var currentKindness = {};
 
 function goKindness(){
+  $(".bg").css("height", "90vh");
   state = 'kindness';
   $("#stage").removeClass().addClass("kindnessTop");
   if(usedKindnessInd.length == line1.length){

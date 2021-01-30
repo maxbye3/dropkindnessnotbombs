@@ -17,18 +17,27 @@ function noEmail(permission){
     $(".enterEmailContainer").show();
 
     var isEmail = checkEmail();
+    // general
+    if(type == "completed"){
+      $(".reminderInProgress").hide();
+      $(".reminderComplete").show();
+      $(".bg").css("height", "90vh");
+      $(".followMe").css({"position": "absolute"});
+    } else if ('in progress'){  
+      $(".followMe").css({"position": "initial"});
+      $(".reminderInProgress").show();
+      $(".reminderComplete").hide();
+      $(".bg").css("height", "75vh");
+    }
+
     // console.log('isEmail:', isEmail);
     if(isEmail){ // email found  
       $(".userEmail").val(isEmail);  
       if(type == "completed"){
-        $(".reminderInProgress").hide();
-        $(".reminderComplete").show();
         $(".emailHeader").html("<span class='darkGreen'>Hey you</span>");
         $(".emailContainerTxt").html("We got your email and your points have been saved. Change it if it's wrong.");
 
       } else if ('in progress'){  
-        $(".reminderInProgress").show();
-        $(".reminderComplete").hide();
         var propertiesToCheck = loadData();
         var button = "<div style='margin-top:8px'><button class='mt-10 btn btn-danger' onclick='noEmail(true)'>No, don't do that.</button></div>";
         $(".emailHeader").html("<span class='darkGreen'>Reminder?</span>");
@@ -41,14 +50,10 @@ function noEmail(permission){
       }
     } else{ // no email
       if(type == "completed"){
-        $(".reminderInProgress").hide();
-        $(".reminderComplete").show();
         $(".emailHeader").html("<span class='darkGreen'>Sign up to save!</span>");
         $(".emailContainerTxt").html("We don't have you in our files...<br> Enter an email to save those points!");
         $(".privateDisclaimer").html("We ain't sharing your deets with no one. <span class='red'>Even if they ask nice.</span>");
       } else if ('in progress'){
-        $(".reminderInProgress").show();
-        $(".reminderComplete").hide();
         $(".emailHeader").html("<span class='darkPink'>Want a reminder?</span>");
         $(".emailContainerTxt").html("Enter your email below to receive a gentle nagging later");
         $(".privateDisclaimer").html("As Frodon once yelled from Mount Sire. Your details <span class='pink'>\"shall not be shared!\"</span>");

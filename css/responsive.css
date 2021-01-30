@@ -25,7 +25,11 @@
   }
 
   .kindnessTop {
-    top: 27vh;
+    top: 22vh;
+  }
+
+  .progressTop{
+    top: 15vh;
   }
 
 }

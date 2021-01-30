@@ -11,6 +11,7 @@ $(".somethingToSayMobile").toggle();
   * ABOUT
   */
  function goAbout(){
+  $(".bg").css("height", "90vh");
   $("#stage").removeClass().addClass("aboutTop");
   $(".kindnessSelected, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .enterEmailContainer, .whatsNextContainer, .selectAgainGrayTxt, .enterEmailContainer").hide();
   $(".swipes, .rightSwipeHitBox, .enterEmail").show();  
@@ -33,6 +34,8 @@ $(".somethingToSayMobile").toggle();
 * CONTACT ME
 */
 function contactMe(){
+  console.log(1);
+  
   $("#stage").removeClass().addClass("contactTop");
   kindnessSelected();
   $(".kindnessSelected, .somethingToSayMobile, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .whatsNextContainer, .enterEmailContainer").hide();
@@ -42,6 +45,7 @@ function contactMe(){
   $(".line1").html(line1 + '<br>' + line2);
   var email = '<div class="emailInput input-group mb-3"><div class="input-group-prepend"><span class="input-group-text">@</span></div><input type="text" class="form-control" placeholder="Your Email" id="contactEmail"></div>';
   $(".line2").html("Or contact me in the form below: <textarea class='w-75' rows='5' id='contactMessage'></textarea>" +email+  "<div><button class='btn btn-success m-10' onclick='contactMeClick()'>Submit message</button></div>");
+  $(".bg").css("height", "100vh");
 }
   
 function contactMeClick(){
