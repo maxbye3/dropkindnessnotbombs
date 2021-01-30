@@ -1,6 +1,7 @@
 function init(){
   
   history.pushState('home', "Home", "#/home");
+  // history.pushState('home', "Home", "#/dropkindnessnotbombs");
   $('.whatsNextEmail, .whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();
   
   
