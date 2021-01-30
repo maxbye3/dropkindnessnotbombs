@@ -5,6 +5,18 @@
 .isDesktop {
   display: block;
 }
+/*
+* WIDTH
+*/
+@media all and (min-width: 1200px) {
+  #contactMessage {
+    font-size: 1.5vw;
+  }
+
+  .absolute{
+    top: 20vh;
+  }
+}
 
 @media all and (min-width: 130px) {
   .reg-text{
@@ -22,7 +34,7 @@
   }
 
   .absolute {
-    top: 0vh;
+    top: 25vh;
   }
 
   .reg-text{
@@ -48,23 +60,26 @@
   }
 
   .smallTxt {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 }
 
 @media all and (max-width: 400px) {
   .absolute {
-    top: 35vh;
+    top: 25vh;
   }
 
   .kindnessTitle{
     font-size: 8.5vw;
   }
 }
-
+/* width */
+/*
+* HEIGHT
+*/
 @media all and (max-height: 400px) {
   .absolute {
-    top: 40vh;
+    top: 47vh;
   }
 
   .bg, .followMe, .rightSwipeHitBox, .leftSwipeHitBox {
@@ -95,3 +110,4 @@
     width: 30px;    
   }
 }
+/* height */

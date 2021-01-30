@@ -29,7 +29,6 @@
   cursor: pointer !important;
 }
 
-
 body, html {
   height: 100%;
   margin: 0;
@@ -45,8 +44,6 @@ body, html {
   height: 85vh;
   top: 15vh;
 }
-
-
 
 .rightSwipeHitBox{
   cursor: e-resize;
@@ -67,6 +64,7 @@ body{
 
 .smallTxt {
   font-size: 2vw;
+  line-height: 12px;
 }
 
 .bg {

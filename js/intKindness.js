@@ -11,10 +11,6 @@ function goKindness(){
   // from selected back to selection
   $(".enterEmailContainer, .kindnessSelected, .selectAgain, .kindnessComplete, .whatsNextContainer").hide();
   $(".swipes, .rightSwipeHitBox, .leftSwipeHitBox, .levelBg").show();
-  $(".absolute").css({"top":"35vh"});
-  if(window.innerHeight <= 400){
-    $(".absolute").css({"top":"47vh"});
-  }
   $(".bg").css({"opacity": ".5"});
 
   var uniqueInt = uniqueRandomNum();

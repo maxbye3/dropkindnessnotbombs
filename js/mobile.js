@@ -7,8 +7,9 @@
   });
   
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    $(".interactiveTxt").html("SWIPE");
-  } else {
+  // if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  //   $(".interactiveTxt").html("SWIPE");
+  // } else {
+  //    $(".interactiveTxt").html("TAP");
+  //  }
      $(".interactiveTxt").html("TAP");
-   }

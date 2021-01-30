@@ -43,6 +43,9 @@ function newUser(kindness){
 // retrieve the object from storage
 function loadData(){  
   var retrievedObject = localStorage.getItem('userData');
+  if(!retrievedObject){
+    return {};
+  }
   return JSON.parse(retrievedObject);
 }
 
