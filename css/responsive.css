@@ -60,6 +60,38 @@
   .kindnessTitle{
     font-size: 8.5vw;
   }
+}
 
+@media all and (max-height: 400px) {
+  .absolute {
+    top: 40vh;
+  }
 
+  .bg, .followMe, .rightSwipeHitBox, .leftSwipeHitBox {
+    height: 150%;
+  }
+
+  .followMe{
+    position: inherit;   
+    margin-top: 5px; 
+  }
+
+  .followMe img{
+    width: 40px;    
+  }
+}
+
+@media all and (max-height: 300px) {
+  .bg, .rightSwipeHitBox, .leftSwipeHitBox {
+    height: 170%;
+  }
+
+  .followMe{
+    position: inherit;   
+    margin-top: 10px; 
+  }
+
+  .followMe img{
+    width: 30px;    
+  }
 }

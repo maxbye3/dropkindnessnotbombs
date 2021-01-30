@@ -22,7 +22,6 @@ $(".somethingToSayMobile").toggle();
   $(".rightSwipeTxt").html("to get started");
   randomColor('#swipeColor1');
   randomColor('#swipeColor2');
-  // $(".absolute").css("top","25vh");
   $(".bg").css('background-image', 'url("./img/UO6pL1X.jpg")');
   $(".opacity").css('opacity','.2');
 }
@@ -72,6 +71,9 @@ function contactMe(){
     $(".kindnessSelected, .websiteUrl, .otherWiseTxt").show();
     $(".leftSwipeTxt").html("if you want to select a new suggestion");
     $(".absolute").css({"top":"25vh"});
+    if(window.innerHeight <= 400){
+      $(".absolute").css({"top":"47vh"});
+    }
     $(".bg").css({"opacity": ".3"});
     $(".selectAgain").show().html("<u class='selectAgainGrayTxt'>or click here to select a new kindness</u>");
     $(".statusHeading").html("<span class='strongRed'>KINDNESS SELECTED:</span>");

@@ -143,6 +143,12 @@ a {
   border-bottom: 1px #80d6e6 solid;
 }
 
+.followMe, .followMe img, .followMe a{
+  cursor: pointer;
+}
+/*
+* FOLLOW ME
+*/
 .followMe{
   z-index: 1;
   position: absolute;
@@ -153,10 +159,10 @@ a {
   top: 91%;
 }
 
-.followMe, .followMe img, .followMe a{
-  cursor: pointer;
+.followMe img {
+  width: 50px;
 }
-
+/* follow me */
 .imageKudos {
   color: white;
   padding-left: 5px;
