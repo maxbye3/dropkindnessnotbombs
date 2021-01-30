@@ -2,12 +2,11 @@ function init(){
   
   history.pushState('home', "Home", "#/home");
   // history.pushState('home', "Home", "#/dropkindnessnotbombs");
-  $('.whatsNextEmail, .whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();
+  $('.reminderComplete, .reminderInProgress, .whatsNextEmail, .whatsNextContainer, .failureContainer, .imageKudos, .somethingToSayMobile, .kindnessSelected, .levelBg, .kindnessComplete, .selectAgain, .enterEmailContainer').hide();
   
   
   
   // Check if in progress
-  console.log("check progress");
   var propertiesToCheck = loadData();
   var kindness = propertiesToCheck.kindness;
   if(kindness){

@@ -97,6 +97,8 @@ function contactMe(){
     // window.history.pushState("complete", "Kindness Completed", "#/completed-kindness");
     kindnessSelected();
     showReminder('completed');
+    $(".enterEmail").show();
+    console.log(1);
     
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl, .whatsNextContainer, .selectAgainGrayTxt").hide();
     $(".statusHeading").html("<span class='blue'>Nice job!</span>");

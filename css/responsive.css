@@ -13,6 +13,10 @@
     font-size: 1.5vw;
   }
 
+  .bigger {
+    font-size: 2vw;
+  }
+
   .absolute{
     top: 20vh;
   }

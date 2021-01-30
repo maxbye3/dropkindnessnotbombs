@@ -11,10 +11,6 @@
   src: url(../font/helvetica/HelveticaNeueBd.ttf);
 }
 
-.enterEmailContainer{
-  background: white;
-}
-
 .navbar{
   position: fixed;
   width: 100%;
@@ -252,7 +248,8 @@ a {
 * EMAIL
 */
 .enterEmailContainer{
-  margin-top: 25px;
+  background: white;
+  margin-top: 0px;
 }
 
 .emailContainerTxt {
