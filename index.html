@@ -58,7 +58,7 @@
     </header>
     <!-- MOBILE HEADER -->
     <div class="isMobile navbar bg-light navbar-light somethingToSayMobile">
-        <h2 onclick="contactMe()" class="cursor-pointer my-2 text-dark ml-3 navbarHeader"></h2>
+        <h2 onclick="contactMe()" class="p-0 cursor-pointer my-2 text-dark ml-0 navbarHeader">
             <img src="img/megaphone.png" class="megaphoneImg">
             <span class="bebas text-dark bebas bigger ml-1"> I got something to say </span>
         </h2>        
@@ -134,33 +134,31 @@
             </p>
             <!-- what's next -->
             <!-- EMAIL CONTAINER -->
-            <div class="card enterEmailContainer">
-                <div class="card-body p-0">
-                    <p class="reg-text bigger mb-0 mt-3">
-                        <span class="emailHeader">
-                                <span class="darkPink">
-                                Want a reminder?
-                            </span>
+            <div class="enterEmailContainer px-2 py-1">
+                <p class="reg-text bigger mb-0 mt-3">
+                    <span class="emailHeader">
+                            <span class="darkPink">
+                            Want a reminder?
                         </span>
-                    </p>
-                    <p class="emailContainerTxt m-2">
-                        Enter your email below to receive a gentle nagging later
-                    </p>
-                    <div class="enterEmail">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control" placeholder="Your email" id="userEmail">
-                            <div class="input-group-append">
-                                <button class="btn btn-success emailSaved">submit</button>
-                            </div>
-                        </div>                    
-                        <p class="privateDisclaimer">
-                            As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
-                        </p>
-                    </div>
-                    <p class="whatsNextEmail m-25 mb-0 reg-text bigger text-black p-20">
-                        <u class='cursor-pointer bigger' onclick='goKindness()'>Click here to select a new kindness</u>
+                    </span>
+                </p>
+                <p class="emailContainerTxt m-2">
+                    Enter your email below to receive a gentle nagging later
+                </p>
+                <div class="enterEmail">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Your email" id="userEmail">
+                        <div class="input-group-append">
+                            <button class="btn btn-success emailSaved">submit</button>
+                        </div>
+                    </div>                    
+                    <p class="privateDisclaimer">
+                        As Frodon once yelled from Mount Sire. Your details <span id="swipeColor4">"shall not be shared!"</span>
                     </p>
                 </div>
+                <p class="whatsNextEmail m-25 mb-0 reg-text bigger text-black p-20">
+                    <u class='cursor-pointer bigger' onclick='goKindness()'>Click here to select a new kindness</u>
+                </p>
             </div>
             <!-- email -->
         </div>

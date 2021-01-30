@@ -33,8 +33,11 @@ function goKindness(){
       date: Date.now(),
     };
     kindnessView(currentKindness.line1, currentKindness.line2, currentKindness.website, currentKindness.image, type[uniqueInt]);
+    
     // unique
-    if(website){      
+    console.log("website:", website[uniqueInt]);
+    $(".websiteDisclaimer").hide();
+    if(website[uniqueInt]){      
       $(".websiteDisclaimer").show().html("[accept kindness to reveal website]");
     } 
     $(".websiteUrl").hide();

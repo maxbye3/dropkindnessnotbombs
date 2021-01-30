@@ -17,16 +17,12 @@
 
 @media all and (max-width: 700px) {
 
-  .imageKudos{
-    width: 65%;
-  }
-
   .isMobile {
     display: block;
   }
 
   .absolute {
-    top: 20vh;
+    top: 0vh;
   }
 
   .reg-text{
@@ -54,12 +50,9 @@
   .smallTxt {
     font-size: 3vw;
   }
-
 }
 
-
 @media all and (max-width: 400px) {
-
   .absolute {
     top: 35vh;
   }

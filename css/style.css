@@ -11,6 +11,9 @@
   src: url(../font/helvetica/HelveticaNeueBd.ttf);
 }
 
+.enterEmailContainer{
+  background: white;
+}
 
 .navbar{
   position: fixed;
@@ -147,7 +150,7 @@ a {
   color: white;
   padding: 5px;
   border-radius: 0px 0px 0px 5px;
-  bottom: 2px;
+  top: 91%;
 }
 
 .followMe, .followMe img, .followMe a{
@@ -155,14 +158,9 @@ a {
 }
 
 .imageKudos {
-  z-index: 20;
-  position: absolute;
-  right: 0px;
-  background: rgba(0,0,0,0.5);
   color: white;
-  padding: 5px;
-  border-radius: 5px;
-  bottom: 2px;
+  padding-left: 5px;
+  background: rgba(0,0,0,0.5);
 }
 
 .bebas {
