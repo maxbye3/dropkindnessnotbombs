@@ -73,3 +73,27 @@ function noEmail(permission){
     $(".emailHeader").html("<span class='darkBlue'>Nice one!</span>");
     $(".emailContainerTxt").html("The email below has been saved!  Change if wrong");
   });
+
+
+  $(".userEmailComplete").on('keyup', function(e) {
+    var field = $(this);
+    if(validateEmail(field.val())){
+      $(".emailSavedComplete").attr("disabled",false);
+    } else {
+      $(".emailSavedComplete").attr("disabled",true);
+    }
+  });
+
+  $(".userEmailProgress").on('keyup', function(e) {
+    var field = $(this);
+    if(validateEmail(field.val())){
+      $(".emailSavedProgress").attr("disabled",false);
+    } else {
+      $(".emailSavedProgress").attr("disabled",true);
+    }
+  });
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
