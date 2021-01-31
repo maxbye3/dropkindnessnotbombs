@@ -32,8 +32,7 @@ function updateIdInDb(propertiesToSave){
         console.log('Update error: ', error)
     } else {
         console.log("Saving to local storage: ", propertiesToSave);        
-        localStorage.setItem('userData', JSON.stringify(propertiesToSave));
-        
+        localStorage.setItem('userData', JSON.stringify(propertiesToSave));        
     }
     });
 }

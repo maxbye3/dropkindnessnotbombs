@@ -17,23 +17,25 @@ function updateItem(userData){
   var id = userData.id;
   // console.log('Existing ID:', id);
   if(!id){
-    newUser(userData.kindness);
+    newUser(userData);
   } else if(id){
     // save in DB
     updateIdInDb(userData);
   }
 }
 
-function newUser(kindness){
+function newUser(user){
+  if(user.status == "complete"){
+    user.kindness = false;
+  }
   // get email
   var propertiesToCheck = loadData();
   var email = propertiesToCheck.email;
-
   var newUser = {
     status: 'in progress', 
-    kindness: false,
+    kindness: user.kindness || false,
     id: '',
-    email: email || '',
+    email: user.email || '',
   };
   // save in DB
   newUser.id = newSave(newUser);
@@ -86,7 +88,6 @@ function checkEmail(){
 }
 
 function deleteAll(){
-  var retrievedObject = localStorage.getItem('userData');
   localStorage.setItem('userData', JSON.stringify({}));
   location.reload();
 }
