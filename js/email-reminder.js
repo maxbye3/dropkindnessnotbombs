@@ -55,7 +55,7 @@ function noEmail(permission){
       } else if ('in progress'){
         $(".emailHeader").html("<span class='darkPink'>Want a reminder?</span>");
         $(".emailContainerTxt").html("Enter your email below to receive a gentle nagging later");
-        $(".privateDisclaimer").html("As Frodon once yelled from Mount Sire. Your details <span class='pink'>\"shall not be shared!\"</span>");
+        $(".privateDisclaimer").html("As Frodon once yelled from Mount Sire. Your details <span class='red'>\"shall not be shared!\"</span>");
       }
     }
   }

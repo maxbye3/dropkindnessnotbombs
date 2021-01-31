@@ -69,10 +69,10 @@ function areFiveOver(){
   // var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
   var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
   // console.log('diffMins: ', diffMins);
-  if(diffMins >= 0){
+  if(diffMins >= 5){
     return 'times up';
   } else {
-    return 0 - diffMins;
+    return 5 - diffMins;
   }
 }
 
