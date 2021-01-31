@@ -60,7 +60,7 @@ function noEmail(permission){
   }
 
 
-  $(".emailSaved").click(function() {
+  function emailSaved(){
     var email;
     if($(".userEmailProgress").val().length == 0){
       email = $(".userEmailComplete").val();
@@ -72,7 +72,7 @@ function noEmail(permission){
     updateItem(propertiesToSave);
     $(".emailHeader").html("<span class='darkBlue'>Nice one!</span>");
     $(".emailContainerTxt").html("The email below has been saved!  Change if wrong");
-  });
+  }
 
 
   $(".userEmailComplete").on('keyup', function(e) {
