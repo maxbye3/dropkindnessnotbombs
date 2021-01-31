@@ -34,8 +34,6 @@ $(".somethingToSayMobile").toggle();
 * CONTACT ME
 */
 function contactMe(){
-  console.log(1);
-  
   $("#stage").removeClass().addClass("contactTop");
   kindnessSelected();
   $(".kindnessSelected, .somethingToSayMobile, .kindnessComplete, .websiteUrl, .websiteDisclaimer, .levelBg, .imageKudos, .whatsNextContainer, .enterEmailContainer").hide();
@@ -107,9 +105,6 @@ function contactMeClick(){
     $("#stage").removeClass().addClass("completeTop");
     showReminder('completed');
     $(".enterEmail").show();
-    console.log(1);
-
-    
     $(".otherWiseTxt, .kindnessComplete, .line2, .websiteUrl, .whatsNextContainer, .selectAgainGrayTxt").hide();
     $(".statusHeading").html("<span class='blue'>Nice job!</span>");
     $(".line1").html("Performing this kindness has scored you <span class='pink'>" + score + "</span> points.");
