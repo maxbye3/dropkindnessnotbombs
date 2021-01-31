@@ -30,7 +30,8 @@ function noEmail(permission){
 
     // console.log('isEmail:', isEmail);
     if(isEmail){ // email found  
-      $(".userEmail").val(isEmail);  
+      $(".userEmailComplete").val(isEmail);  
+      $(".userEmailProgress").val(isEmail);  
       if(type == "completed"){
         $(".emailHeader").html("<span class='darkGreen'>Hey you</span>");
         $(".emailContainerTxt").html("We got your email and your points have been saved. Change it if it's wrong.");
@@ -71,7 +72,7 @@ function noEmail(permission){
     propertiesToSave.email = email;
     updateItem(propertiesToSave);
     $(".emailHeader").html("<span class='darkBlue'>Nice one!</span>");
-    $(".emailContainerTxt").html("The email below has been saved!  Change if wrong");
+    $(".emailContainerTxt").html("The email below has been saved!  Change if wrong:");
   }
 
 
